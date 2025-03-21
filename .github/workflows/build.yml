@@ -36,7 +36,7 @@ jobs:
           gradle-home-cache-cleanup: true
 
       - name: Build Default Flavor
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build --no-daemon -Phuawei
 
       - name: Build Huawei Flavor
         run: ./gradlew assembleHuaweiDebug --no-daemon -Phuawei
