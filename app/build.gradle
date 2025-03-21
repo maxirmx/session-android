@@ -149,19 +149,20 @@ android {
     }
 
     flavorDimensions "distribution"
-    productFlavors {
-        play {
-            isDefault true
-            dimension "distribution"
-            apply plugin: 'com.google.gms.google-services'
-            ext.websiteUpdateUrl = "null"
-            buildConfigField "boolean", "PLAY_STORE_DISABLED", "false"
-            buildConfigField "org.session.libsession.utilities.Device", "DEVICE", "org.session.libsession.utilities.Device.ANDROID"
-            buildConfigField "String", "NOPLAY_UPDATE_URL", "$ext.websiteUpdateUrl"
-            buildConfigField 'String', 'PUSH_KEY_SUFFIX', '\"\"'
-            signingConfig signingConfigs.play
-        }
+productFlavors {
+    play {
+        isDefault true
+        dimension "distribution"
+        apply plugin: 'com.google.gms.google-services'
+        ext.websiteUpdateUrl = "null"
+        buildConfigField "boolean", "PLAY_STORE_DISABLED", "false"
+        buildConfigField "org.session.libsession.utilities.Device", "DEVICE", "org.session.libsession.utilities.Device.ANDROID"
+        buildConfigField "String", "NOPLAY_UPDATE_URL", "$ext.websiteUpdateUrl"
+        buildConfigField 'String', 'PUSH_KEY_SUFFIX', '\"\"'
+        signingConfig signingConfigs.play
+    }
 
+    if (project.hasProperty('huawei')) {
         huawei {
             dimension "distribution"
             ext.websiteUpdateUrl = "null"
@@ -171,16 +172,17 @@ android {
             buildConfigField 'String', 'PUSH_KEY_SUFFIX', '\"_HUAWEI\"'
             signingConfig signingConfigs.huawei
         }
-
-        website {
-            dimension "distribution"
-            ext.websiteUpdateUrl = "https://github.com/session-foundation/session-android/releases"
-            buildConfigField "boolean", "PLAY_STORE_DISABLED", "true"
-            buildConfigField "org.session.libsession.utilities.Device", "DEVICE", "org.session.libsession.utilities.Device.ANDROID"
-            buildConfigField "String", "NOPLAY_UPDATE_URL", "\"$ext.websiteUpdateUrl\""
-            buildConfigField 'String', 'PUSH_KEY_SUFFIX', '\"\"'
-        }
     }
+
+    website {
+        dimension "distribution"
+        ext.websiteUpdateUrl = "https://github.com/session-foundation/session-android/releases"
+        buildConfigField "boolean", "PLAY_STORE_DISABLED", "true"
+        buildConfigField "org.session.libsession.utilities.Device", "DEVICE", "org.session.libsession.utilities.Device.ANDROID"
+        buildConfigField "String", "NOPLAY_UPDATE_URL", "\"$ext.websiteUpdateUrl\""
+        buildConfigField 'String', 'PUSH_KEY_SUFFIX', '\"\"'
+    }
+}
 
     applicationVariants.configureEach { variant ->
         variant.outputs.each { output ->
