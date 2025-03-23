@@ -129,13 +129,19 @@ android {
         }
     }
 
-    signingConfigs {
+signingConfigs {
         play {
             if (project.hasProperty('SESSION_STORE_FILE')) {
                 storeFile file(SESSION_STORE_FILE)
                 storePassword SESSION_STORE_PASSWORD
                 keyAlias SESSION_KEY_ALIAS
                 keyPassword SESSION_KEY_PASSWORD
+            } else if (System.getenv("SESSION_STORE_FILE") != null) {
+                // Support for GitHub Actions environment variables
+                storeFile file(System.getenv("SESSION_STORE_FILE"))
+                storePassword System.getenv("SESSION_STORE_PASSWORD")
+                keyAlias System.getenv("SESSION_KEY_ALIAS")
+                keyPassword System.getenv("SESSION_KEY_PASSWORD")
             }
         }
         huawei {
@@ -144,6 +150,12 @@ android {
                 storePassword SESSION_HUAWEI_STORE_PASSWORD
                 keyAlias SESSION_HUAWEI_KEY_ALIAS
                 keyPassword SESSION_HUAWEI_KEY_PASSWORD
+            } else if (System.getenv("SESSION_STORE_FILE") != null) {
+                // For GitHub Actions, using the same keystore for both flavors
+                storeFile file(System.getenv("SESSION_STORE_FILE"))
+                storePassword System.getenv("SESSION_STORE_PASSWORD")
+                keyAlias System.getenv("SESSION_KEY_ALIAS")
+                keyPassword System.getenv("SESSION_KEY_PASSWORD")
             }
         }
     }
