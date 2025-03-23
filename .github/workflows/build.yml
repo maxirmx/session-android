@@ -36,7 +36,7 @@ jobs:
         run: |
           keytool -genkeypair -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
                   -keysize 2048 -validity 10000 -alias alias -storepass storepass \
-                  -dname "cn=Mark Jones, ou=Java, o=Oracle, c=US" -noprompt
+                  -dname "${{ secrets.Name }}"
 
       - name: Build Default Flavor
         run: ./gradlew build --no-daemon
