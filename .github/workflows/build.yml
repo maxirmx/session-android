@@ -27,9 +27,6 @@ jobs:
           # Android 8.0, API Level 26
           cmdline-tools-version: 9123335
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
@@ -37,9 +34,9 @@ jobs:
 
       - name: Create keystore file
         run: |
-          echo y | keytool -genkeypair -v -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
-                  -keysize 2048 -validity 10000 -alias ${{ secrets.KEY_ALIAS }} -storepass ${{ secrets.KEYSTORE_PASSWORD }}
-                  -keypass ${{ secrets.KEY_PASSWORD }} -dname "cn=Mark Jones, ou=Java, o=Oracle, c=US" -noprompt
+          keytool -genkeypair -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
+                  -keysize 2048 -validity 10000 -alias alias -storepass storepass \
+                  -dname "cn=Mark Jones, ou=Java, o=Oracle, c=US" -noprompt
 
       - name: Build Default Flavor
         run: ./gradlew build --no-daemon
