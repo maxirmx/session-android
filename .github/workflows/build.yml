@@ -38,24 +38,24 @@ jobs:
       - name: Create keystore file
         run: |
           keytool -genkey -v -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
-                  -keysize 2048 -validity 10000 -alias my_key_alias -storepass my_store_password
-                  -keypass my_key_password -dname "CN=Your Name, OU=Your Org Unit, O=Your Org, L=Your City, S=Your State, C=Your Country"
+                  -keysize 2048 -validity 10000 -alias ${{ secrets.KEY_ALIAS }} -storepass ${{ secrets.KEYSTORE_PASSWORD }}
+                  -keypass ${{ secrets.KEY_PASSWORD }} -dname "cn=Mark Jones, ou=Java, o=Oracle, c=US"
 
       - name: Build Default Flavor
         run: ./gradlew build --no-daemon
         env:
           SESSION_STORE_FILE: ${{ github.workspace }}/keystore.jks
-          SESSION_STORE_PASSWORD: my_store_password
-          SESSION_KEY_ALIAS: my_key_alias
-          SESSION_KEY_PASSWORD: my_key_password
+          SESSION_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          SESSION_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SESSION_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: Build Huawei Flavor
         run: ./gradlew assembleHuaweiDebug --no-daemon -Phuawei
         env:
           SESSION_STORE_FILE: ${{ github.workspace }}/keystore.jks
-          SESSION_STORE_PASSWORD: my_store_password
-          SESSION_KEY_ALIAS: my_key_alias
-          SESSION_KEY_PASSWORD: my_key_password
+          SESSION_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          SESSION_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SESSION_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: Upload build reports
         if: always()
