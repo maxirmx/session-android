@@ -33,7 +33,7 @@ jobs:
       - name: Create keystore file
         run: |
           keytool -genkeypair -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
-                  -keysize 2048 -validity 10000 -alias alias -storepass storepass \
+                  -keysize 2048 -validity 10000 -alias ${{ secrets.KEY_ALIAS }} -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
                   -dname "${{ secrets.Name }}"
 
       - name: Build Default Flavor
