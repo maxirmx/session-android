@@ -42,7 +42,7 @@ jobs:
             echo "Keystore created successfully at ${{ github.workspace }}/keystore.jks"
 
       - name: Build Default Flavor
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build --no-daemon  --debug
         env:
           SESSION_STORE_FILE: ${{ github.workspace }}/keystore.jks
           SESSION_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
