@@ -131,12 +131,18 @@ android {
 
 signingConfigs {
         play {
-            if (project.hasProperty('SESSION_STORE_FILE')) {
-                storeFile file(SESSION_STORE_FILE)
-                storePassword SESSION_STORE_PASSWORD
-                keyAlias SESSION_KEY_ALIAS
-                keyPassword SESSION_KEY_PASSWORD
-            } else if (System.getenv("SESSION_STORE_FILE") != null) {
+//            if (project.hasProperty('SESSION_STORE_FILE')) {
+//                storeFile file(SESSION_STORE_FILE)
+//                storePassword SESSION_STORE_PASSWORD
+//                keyAlias SESSION_KEY_ALIAS
+//                keyPassword SESSION_KEY_PASSWORD
+//            } else
+            if (System.getenv("SESSION_STORE_FILE") != null) {
+                println("Using environment variables for signing config:")
+                println("  SESSION_STORE_FILE: ${System.getenv("SESSION_STORE_FILE")}")
+                println("  SESSION_KEY_ALIAS: ${System.getenv("SESSION_KEY_ALIAS")}")
+                // Don't print actual passwords for security reasons
+                println("  Store and key passwords are set from environment")
                 // Support for GitHub Actions environment variables
                 storeFile file(System.getenv("SESSION_STORE_FILE"))
                 storePassword System.getenv("SESSION_STORE_PASSWORD")
