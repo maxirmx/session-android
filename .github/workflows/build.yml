@@ -17,7 +17,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
           cache: gradle
 
@@ -32,9 +32,14 @@ jobs:
 
       - name: Create keystore file
         run: |
-          keytool -genkeypair -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
-                  -keysize 2048 -validity 10000 -alias ${{ secrets.KEY_ALIAS }} -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
-                  -dname "${{ secrets.Name }}"
+            keytool -genkeypair -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
+                -keysize 2048 -validity 10000 -alias ${{ secrets.KEY_ALIAS }} -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
+                -dname "${{ secrets.Name }}"
+            # Verify keystore was created properly
+            ls -la ${{ github.workspace }}/keystore.jks
+            # List keystore content to verify alias
+            keytool -list -keystore ${{ github.workspace }}/keystore.jks -storepass ${{ secrets.KEYSTORE_PASSWORD }}
+            echo "Keystore created successfully at ${{ github.workspace }}/keystore.jks"
 
       - name: Build Default Flavor
         run: ./gradlew build --no-daemon
