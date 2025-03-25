@@ -1,0 +1,123 @@
+name: Session CI
+
+on:
+  push:
+    branches: [ main, master, development ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch tags
+        run: git fetch --tags
+
+      - name: Clone Submodules
+        run: git submodule update --init --recursive --depth=2 --jobs=4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 9123335
+
+      - name: Install ninja-build
+        run: sudo apt-get update && sudo apt-get install -y ninja-build
+
+      - name: Run Unit Tests
+        run: ./gradlew testPlayDebugUnitTestCoverageReport
+
+      - name: Upload Test Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: app/build/reports/tests/
+
+  check-artifact-exists:
+    name: Check Build Artifact Existence
+    runs-on: ubuntu-latest
+#   if: github.event_name == 'pull_request'
+    if: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Poll for build artifact existence
+        run: ./scripts/drone-upload-exists.sh
+
+  debug-apk-build:
+    name: Debug APK Build
+    runs-on: ubuntu-latest
+#    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    if: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch tags
+        run: git fetch --tags
+
+      - name: Clone Submodules
+        run: git submodule update --init --recursive --depth=2 --jobs=4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 9123335
+
+      - name: Install ninja-build
+        run: sudo apt-get update && sudo apt-get install -y ninja-build
+
+      - name: Create default keystore file
+        run: |
+          keytool -genkeypair -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
+                  -keysize 2048 -validity 10000 -alias alias -storepass storepass \
+                  -keypass storepass \
+                  -dname "CN=Session, OU=Oxen, O=Oxen, L=Unknown, ST=Unknown, C=US"
+
+      - name: Build Debug APKs
+        run: |
+          ./gradlew assemblePlayDebug assembleWebsiteDebug
+          ./gradlew -Phuawei=1 assembleHuaweiDebug
+        env:
+          SESSION_STORE_FILE: ${{ github.workspace }}/keystore.jks
+          SESSION_STORE_PASSWORD: storepass
+          SESSION_KEY_ALIAS: alias
+          SESSION_KEY_PASSWORD: storepass
+
+      - name: Upload APKs
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/development'
+        run: ./scripts/drone-static-upload.sh
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+
+      - name: Upload APKs as Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-apks
+          path: |
+            app/build/outputs/apk/**/*.apk
