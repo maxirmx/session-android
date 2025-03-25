@@ -1,0 +1,66 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'  # Matches semantic versioning tags like v1.0.0, v1.2.3-beta, etc.
+
+jobs:
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone Submodules
+        run: git submodule update --init --recursive --depth=2 --jobs=4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 9123335
+
+      - name: Install ninja-build
+        run: sudo apt-get update && sudo apt-get install -y ninja-build
+
+      - name: Extract Version from Tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Build Release APK
+        run: |
+          ./gradlew assembleWebsiteRelease                            \
+            -PSESSION_STORE_FILE=${{ github.workspace }}/keystore.jks \
+            -PSESSION_STORE_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }} \
+            -PSESSION_KEY_ALIAS=${{ secrets.KEY_ALIAS }}              \
+            -PSESSION_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
+
+      - name: Rename APK with Version
+        run: |
+          APK_PATH=$(find app/build/outputs/apk/website/release -name "*.apk" -type f)
+          APK_NAME=$(basename $APK_PATH)
+          NEW_NAME="Noth-${{ steps.get_version.outputs.VERSION }}.apk"
+          mv $APK_PATH app/build/outputs/apk/website/release/$NEW_NAME
+          echo "APK_PATH=app/build/outputs/apk/website/release/$NEW_NAME" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Noth v${{ steps.get_version.outputs.VERSION }}
+          draft: false
+          prerelease: ${{ contains(github.ref, '-') }}
+          generate_release_notes: true
+          files: ${{ env.APK_PATH }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

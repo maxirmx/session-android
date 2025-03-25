@@ -2,7 +2,7 @@ name: Noth CI
 
 on:
   push:
-    branches: [ main, master, development ]
+    branches: [ main ]
   pull_request:
   workflow_dispatch:
 
