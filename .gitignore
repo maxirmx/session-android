@@ -20,5 +20,9 @@ app/play
 app/huawei
 release-creds.toml
 
+keystore.jks
+
 !/scripts/drone-static-upload.sh
 !/scripts/drone-upload-exists.sh
+
+.vscode/
