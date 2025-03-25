@@ -64,16 +64,11 @@ jobs:
   debug-apk-build:
     name: Debug APK Build
     runs-on: ubuntu-latest
-#    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-    if: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Fetch tags
-        run: git fetch --tags
 
       - name: Clone Submodules
         run: git submodule update --init --recursive --depth=2 --jobs=4
@@ -93,22 +88,10 @@ jobs:
       - name: Install ninja-build
         run: sudo apt-get update && sudo apt-get install -y ninja-build
 
-      - name: Create default keystore file
-        run: |
-          keytool -genkeypair -keystore ${{ github.workspace }}/keystore.jks -keyalg RSA \
-                  -keysize 2048 -validity 10000 -alias alias -storepass storepass \
-                  -keypass storepass \
-                  -dname "CN=Session, OU=Oxen, O=Oxen, L=Unknown, ST=Unknown, C=US"
-
       - name: Build Debug APKs
         run: |
           ./gradlew assemblePlayDebug assembleWebsiteDebug
           ./gradlew -Phuawei=1 assembleHuaweiDebug
-        env:
-          SESSION_STORE_FILE: ${{ github.workspace }}/keystore.jks
-          SESSION_STORE_PASSWORD: storepass
-          SESSION_KEY_ALIAS: alias
-          SESSION_KEY_PASSWORD: storepass
 
       - name: Upload APKs
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/development'
