@@ -16,7 +16,7 @@ configurations.configureEach {
 }
 
 def canonicalVersionCode = 1
-def canonicalVersionName = "1.0.0"
+def canonicalVersionName = "1.9.0"
 
 def postFixSize = 10
 def abiPostFix = ['armeabi-v7a' : 1,
