@@ -15,8 +15,8 @@ configurations.configureEach {
     exclude module: "commons-logging"
 }
 
-def canonicalVersionCode = 397
-def canonicalVersionName = "1.21.1"
+def canonicalVersionCode = 1
+def canonicalVersionName = "1.0.0"
 
 def postFixSize = 10
 def abiPostFix = ['armeabi-v7a' : 1,
@@ -131,16 +131,11 @@ android {
 
     signingConfigs {
         play {
-            def storeFilePath = project.hasProperty('SESSION_STORE_FILE') ? SESSION_STORE_FILE : System.getenv('SESSION_STORE_FILE')
-            def storePasswordValue = project.hasProperty('SESSION_STORE_PASSWORD') ? SESSION_STORE_PASSWORD : System.getenv('SESSION_STORE_PASSWORD')
-            def keyAliasValue = project.hasProperty('SESSION_KEY_ALIAS') ? SESSION_KEY_ALIAS : System.getenv('SESSION_KEY_ALIAS')
-            def keyPasswordValue = project.hasProperty('SESSION_KEY_PASSWORD') ? SESSION_KEY_PASSWORD : System.getenv('SESSION_KEY_PASSWORD')
-
-            if (storeFilePath != null) {
-                storeFile file(storeFilePath)
-                storePassword storePasswordValue
-                keyAlias keyAliasValue
-                keyPassword keyPasswordValue
+            if (project.hasProperty('SESSION_STORE_FILE')) {
+                storeFile file(SESSION_STORE_FILE)
+                storePassword SESSION_STORE_PASSWORD
+                keyAlias SESSION_KEY_ALIAS
+                keyPassword SESSION_KEY_PASSWORD
             }
         }
         huawei {
@@ -197,7 +192,7 @@ android {
             def flavour = (variant.flavorName == 'huawei') ? "-huawei" : ""
 
             if (postFix >= postFixSize) throw new AssertionError("postFix is too large")
-            output.outputFileName = output.outputFileName = "session-${variant.versionName}-${abiName}${flavour}.apk"
+            output.outputFileName = output.outputFileName = "noth-${variant.versionName}-${abiName}${flavour}.apk"
             output.versionCodeOverride = canonicalVersionCode * postFixSize + postFix
         }
     }
@@ -264,7 +259,56 @@ apply {
     from("ipToCode.gradle.kts")
 }
 
-preBuild.dependsOn ipToCode
+// Task to preload Android-SpinKit with retry logic
+task preloadSpinKit {
+    description = "Pre-downloads the Android-SpinKit dependency with retry logic"
+
+    doLast {
+        logger.lifecycle("Pre-downloading Android-SpinKit dependency...")
+
+        def maxAttempts = 5
+        def attempts = 0
+        def downloaded = false
+
+        while (!downloaded && attempts < maxAttempts) {
+            attempts++
+            try {
+                // Create a temporary configuration to resolve just this dependency
+                def tempConfig = configurations.create("tempSpinKit${UUID.randomUUID().toString().replace('-', '')}")
+                tempConfig.transitive = true
+
+                // Add the dependency to the temporary configuration
+                dependencies.add(tempConfig.name, "com.github.ybq:Android-SpinKit:1.4.0")
+
+                // Force dependency resolution which will download the files
+                tempConfig.resolve()
+
+                logger.lifecycle("Successfully downloaded Android-SpinKit on attempt ${attempts}")
+                downloaded = true
+
+                // Clean up the temporary configuration
+                configurations.remove(tempConfig)
+            } catch (Exception e) {
+                def waitTime = 2000 * attempts // Increase wait time with each attempt
+                logger.warn("Download failed (attempt ${attempts}/${maxAttempts}): ${e.message}")
+                logger.warn("Retrying in ${waitTime/1000} seconds...")
+
+                try {
+                    Thread.sleep(waitTime)
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt()
+                }
+            }
+        }
+
+        if (!downloaded) {
+            logger.warn("Failed to pre-download Android-SpinKit after ${maxAttempts} attempts")
+            logger.warn("Build will continue and retry during regular dependency resolution")
+        }
+    }
+}
+
+preBuild.dependsOn ipToCode, preloadSpinKit
 
 dependencies {
     implementation project(':content-descriptions')
@@ -357,7 +401,8 @@ dependencies {
     implementation "nl.komponents.kovenant:kovenant:$kovenantVersion"
     implementation "nl.komponents.kovenant:kovenant-android:$kovenantVersion"
     implementation "com.jakewharton.rxbinding3:rxbinding:3.1.0"
-    implementation "com.github.ybq:Android-SpinKit:1.4.0"
+    // SpinKit with retry configuration
+    implementation("com.github.ybq:Android-SpinKit:1.4.0")
     implementation "com.opencsv:opencsv:4.6"
     testImplementation "junit:junit:$junitVersion"
     testImplementation 'org.assertj:assertj-core:3.11.1'
