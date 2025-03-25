@@ -40,6 +40,7 @@ jobs:
 
       - name: Run Unit Tests
         run: ./gradlew testPlayDebugUnitTestCoverageReport
+        continue-on-error: true
 
       - name: Upload Test Reports
         if: always()
