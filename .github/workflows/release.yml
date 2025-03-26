@@ -53,7 +53,7 @@ jobs:
       - name: Rename APK with Version
         run: |
             mkdir -p app/build/outputs/apk/website/release/renamed
-            for APK_PATH in $(find app/build/outputs/apk/website/release -name "*.apk" -type f -maxdepth 1); do
+            for APK_PATH in $(find app/build/outputs/apk/website/release -name "*-universal.apk" -type f -maxdepth 1); do
               echo "$APK_PATH" >> apk_list.txt
             done
             echo "APK_PATH=$(cat apk_list.txt | tr '\n' ',')" >> $GITHUB_ENV

@@ -16,7 +16,7 @@ configurations.configureEach {
 }
 
 def canonicalVersionCode = 1
-def canonicalVersionName = "1.9.0"
+def canonicalVersionName = "2.0.0"
 
 def postFixSize = 10
 def abiPostFix = ['armeabi-v7a' : 1,
@@ -85,7 +85,7 @@ android {
         multiDexEnabled = true
 
         vectorDrawables.useSupportLibrary = true
-        setProperty("archivesBaseName", "session-${versionName}")
+        setProperty("archivesBaseName", "noth-${versionName}")
 
         buildConfigField "long", "BUILD_TIMESTAMP", getLastCommitTimestamp() + "L"
         buildConfigField "String", "GIT_HASH", "\"$getGitHash\""

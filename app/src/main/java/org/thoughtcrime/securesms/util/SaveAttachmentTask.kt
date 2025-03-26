@@ -111,7 +111,7 @@ class SaveAttachmentTask @JvmOverloads constructor(context: Context, count: Int 
             val mimeTypeMap = MimeTypeMap.getSingleton()
             val extension = mimeTypeMap.getExtensionFromMimeType(contentType) ?: "attach"
             val dateFormatter = SimpleDateFormat("yyyy-MM-dd-HHmmss")
-            val base = "session-${dateFormatter.format(timestamp)}"
+            val base = "noth-${dateFormatter.format(timestamp)}"
 
             return "${base}.${extension}";
         }
