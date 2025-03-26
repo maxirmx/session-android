@@ -37,13 +37,18 @@ jobs:
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
+      - name: Fetch keystore
+        run: |
+          echo "${{ secrets.KEYSTORE }}" | tr -d '\n' > keystore.b46
+          base64 -d keystore.b46 > keystore.jks
+
       - name: Build Release APK
         run: |
           ./gradlew assembleWebsiteRelease                            \
-            -PSESSION_STORE_FILE=${{ github.workspace }}/keystore.jks \
+            -PSESSION_STORE_FILE=$PWD/keystore.jks                    \
             -PSESSION_STORE_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }} \
-            -PSESSION_KEY_ALIAS=${{ secrets.KEY_ALIAS }}              \
-            -PSESSION_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
+            -PSESSION_KEY_ALIAS=noth                                  \
+            -PSESSION_KEY_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }}
 
       - name: Rename APK with Version
         run: |

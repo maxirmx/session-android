@@ -3,7 +3,15 @@ name: Noth CI
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'docs/**'
+      - '**.adoc'
+      - '**.md'
   pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - '**.adoc'
+      - '**.md'
   workflow_dispatch:
 
 concurrency:
@@ -129,13 +137,19 @@ jobs:
       - name: Install ninja-build
         run: sudo apt-get update && sudo apt-get install -y ninja-build
 
-      - name: Build Debug APKs
+      - name: Fetch keystore
+        run: |
+          echo "${{ secrets.KEYSTORE }}" | tr -d '\n' > keystore.b46
+          base64 -d keystore.b46 > keystore.jks
+
+      - name: Build Release APKs
         run: |
           ./gradlew assembleWebsiteRelease                            \
-            -PSESSION_STORE_FILE=${{ github.workspace }}/keystore.jks \
+            -PSESSION_STORE_FILE=$PWD/keystore.jks                    \
             -PSESSION_STORE_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }} \
-            -PSESSION_KEY_ALIAS=${{ secrets.KEY_ALIAS }}              \
-            -PSESSION_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
+            -PSESSION_KEY_ALIAS=noth                                  \
+            -PSESSION_KEY_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }}
+
 
       - name: Upload APKs as Artifacts
         uses: actions/upload-artifact@v4

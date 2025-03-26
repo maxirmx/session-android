@@ -138,6 +138,14 @@ android {
                 keyPassword SESSION_KEY_PASSWORD
             }
         }
+        website {
+            if (project.hasProperty('SESSION_STORE_FILE')) {
+                storeFile file(SESSION_STORE_FILE)
+                storePassword SESSION_STORE_PASSWORD
+                keyAlias SESSION_KEY_ALIAS
+                keyPassword SESSION_KEY_PASSWORD
+            }
+        }
         huawei {
             if (project.hasProperty('SESSION_HUAWEI_STORE_FILE')) {
                 storeFile file(SESSION_HUAWEI_STORE_FILE)
@@ -174,14 +182,15 @@ android {
                 }
         }
 
-        website {
-            dimension "distribution"
-            ext.websiteUpdateUrl = "https://github.com/session-foundation/session-android/releases"
-            buildConfigField "boolean", "PLAY_STORE_DISABLED", "true"
-            buildConfigField "org.session.libsession.utilities.Device", "DEVICE", "org.session.libsession.utilities.Device.ANDROID"
-            buildConfigField "String", "NOPLAY_UPDATE_URL", "\"$ext.websiteUpdateUrl\""
-            buildConfigField 'String', 'PUSH_KEY_SUFFIX', '\"\"'
-        }
+    website {
+        dimension "distribution"
+        ext.websiteUpdateUrl = "https://github.com/session-foundation/session-android/releases"
+        buildConfigField "boolean", "PLAY_STORE_DISABLED", "true"
+        buildConfigField "org.session.libsession.utilities.Device", "DEVICE", "org.session.libsession.utilities.Device.ANDROID"
+        buildConfigField "String", "NOPLAY_UPDATE_URL", "\"$ext.websiteUpdateUrl\""
+        buildConfigField 'String', 'PUSH_KEY_SUFFIX', '\"\"'
+        signingConfig signingConfigs.website
+    }
     }
 
     applicationVariants.configureEach { variant ->
