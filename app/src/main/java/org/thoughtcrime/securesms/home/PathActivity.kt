@@ -60,7 +60,7 @@ class PathActivity : PassphraseRequiredActionBarActivity() {
         setContentView(binding.root)
         supportActionBar!!.title = resources.getString(R.string.onionRoutingPath)
 
-        // Substitute "Session" into the path description. Note: This is a non-translatable string.
+        // Substitute "Noth" into the path description. Note: This is a non-translatable string.
         val txt = applicationContext.getSubbedString(R.string.onionRoutingPathDescription,APP_NAME_KEY to APP_NAME)
         binding.pathDescription.text = txt
 

@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "session-android"
+rootProject.name = "noth-android"
 
 include ':app'
 include ':liblazysodium'
