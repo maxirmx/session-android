@@ -53,10 +53,9 @@ jobs:
       - name: Rename APK with Version
         run: |
             mkdir -p app/build/outputs/apk/website/release/renamed
-            for APK_PATH in $(find app/build/outputs/apk/website/release -name "*-universal.apk" -type f -maxdepth 1); do
-              echo "$APK_PATH" >> apk_list.txt
-            done
-            echo "APK_PATH=$(cat apk_list.txt | tr '\n' ',')" >> $GITHUB_ENV
+            NEW_APK_NAME="noth-v${{ steps.get_version.outputs.VERSION }}.apk"
+            cp app/build/outputs/apk/website/release/*-universal.apk "app/build/outputs/apk/website/release/renamed/$NEW_APK_NAME"
+            echo "APK_PATH=app/build/outputs/apk/website/release/renamed/$NEW_APK_NAME" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
