@@ -15,7 +15,7 @@ import java.security.Signature
 class BiometricSecretProvider {
 
     companion object {
-        private const val BIOMETRIC_ASYM_KEY_ALIAS = "Session-biometric-asym"
+        private const val BIOMETRIC_ASYM_KEY_ALIAS = "Noth-biometric-asym"
         private const val ANDROID_KEYSTORE = "AndroidKeyStore"
         private const val SIGNATURE_ALGORITHM = "SHA512withECDSA"
     }

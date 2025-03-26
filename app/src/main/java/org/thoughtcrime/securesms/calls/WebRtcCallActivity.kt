@@ -206,7 +206,7 @@ class WebRtcCallActivity : PassphraseRequiredActionBarActivity() {
             }
         }
 
-        // Substitute "Session" into the "{app_name} Call" text
+        // Substitute "Noth" into the "{app_name} Call" text
         val sessionCallTV = findViewById<TextView>(R.id.sessionCallText)
         sessionCallTV?.text = Phrase.from(this, R.string.callsSessionCall).put(APP_NAME_KEY, getString(R.string.app_name)).format()
     }
