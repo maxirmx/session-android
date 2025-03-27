@@ -1,27 +1,29 @@
-# Noth Android 
+# Noth Android
 
-[Download the APK from here](https://github.com/maxirmx/noth-android/releases/latest)
+[![Noth CI](https://github.com/noth-messenger/noth-android/actions/workflows/build.yml/badge.svg)](https://github.com/noth-messenger/noth-android/actions/workflows/build.yml)
+[![Release](https://github.com/noth-messenger/noth-android/actions/workflows/release.yml/badge.svg)](https://github.com/noth-messenger/noth-android/actions/workflows/release.yml)
 
-## Summary
+[Скачать APK можно здесь](https://github.com/maxirmx/noth-android/releases/latest)
 
-Noth integrates directly with [Oxen Service Nodes](https://docs.oxen.io/about-the-oxen-blockchain/oxen-service-nodes), which are a set of distributed, decentralized and Sybil resistant nodes. Service Nodes act as servers which store messages offline, and a set of nodes which allow for onion routing functionality obfuscating users' IP addresses. For a full understanding of how Noth works, read the [Session Whitepaper](https://getsession.org/whitepaper).
+## Краткое описание
 
-## License
+Noth напрямую интегрируется с [узлами службы Oxen](https://docs.oxen.io/about-the-oxen-blockchain/oxen-service-nodes), которые представляют собой распределённые, децентрализованные b pfobo`yyst epksузлы. 
+Узлы службы действуют как серверы, хранящие сообщения в офлайн-режиме, а также как сеть узлов, обеспечивающих маршрутизацию через сеть Onion сеть, скрывая IP-адреса пользователей. 
+Полное описание работы можно найти в [документе Session Whitepaper](https://getsession.org/whitepaper).
 
-Copyright 2011 Whisper Systems
+## Инструкция по выпуску новой версии
 
-Copyright 2013-2017 Open Whisper Systems
-
-Copyright 2019-2024 The Oxen Project
-
-Copyright 2024-2025 Session Technology Foundation
-
-Copyright 2025 Maxim Samsonov
-
-Licensed under the GPLv3: http://www.gnu.org/licenses/gpl-3.0.html
-
-## Attributions
-
-This project uses [Lucide Icon Font](https://lucide.dev/), which is licensed under the
-[ISC License](third_party_licenses/LucideLicense.txt).
-
+Для приложения Noth Android развёрнута автоматическая система тестирования и сборки на базе GitHub Actions 
+Для выпуска новой версии необходимо
+1. Создать `branch` или `fork`  и запрограмировать в нём, всё, что хочется запрограммировать
+2. Cоздать `Pull Request (PR)`. Для PR будет отрабатывать `workflow`, которое включает в себя Unit Test'ы и сборку отладочной и релизной версии. Указанные версии можно тестировать вручную или автоматически.
+3. По готовности версии необходимо:
+- сделать `merge` в `main`
+- в файле `build.gradle` изменить значения `canonicalVersionCode` и `canonicalVersionName`. `canonicalVersionCode` рекомендуется увеличивать на 1.  `canonocalVersionName` можно менять, как нравится, но она должна соотвествовать схеме `semantic versioning` - XX.YY.ZZ, например 2.13.7
+- поставить метку, соответствующую canonicalVersionCode.
+  Например, для 2.13.7 нужно вызывать
+  ```
+  git tag v2.13.7
+  git push --tags
+  ``` 
+4. После установки метки автоматически запустятся релизные процедуры. На базе метки будет создан релиз, дял релиза будет собран файл apk и выложен в качестве `release asset`.
