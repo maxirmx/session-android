@@ -4,8 +4,6 @@ import android.os.Handler
 import android.os.Looper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import org.session.libsession.messaging.file_server.FileServerApi
 import org.session.libsession.utilities.TextSecurePreferences
 import org.session.libsignal.utilities.Log
 import javax.inject.Inject
@@ -15,43 +13,33 @@ import kotlin.time.Duration.Companion.hours
 private val TAG: String = VersionDataFetcher::class.java.simpleName
 private val REFRESH_TIME_MS = 4.hours.inWholeMilliseconds
 
+/**
+ * This class has been modified to disable update checks from Session Manager.
+ * The app is now fully decoupled from the original Session app.
+ */
 @Singleton
 class VersionDataFetcher @Inject constructor(
     private val prefs: TextSecurePreferences
 ) {
     private val handler = Handler(Looper.getMainLooper())
     private val fetchVersionData = Runnable {
-        scope.launch {
-            try {
-                // Perform the version check
-                val clientVersion = FileServerApi.getClientVersion()
-                Log.i(TAG, "Fetched version data: $clientVersion")
-                prefs.setLastVersionCheck()
-                startTimedVersionCheck()
-            } catch (e: Exception) {
-                // We can silently ignore the error
-                Log.e(TAG, "Error fetching version data", e)
-                // Schedule the next check for 4 hours from now, but do not setLastVersionCheck
-                // so the app will retry when the app is next foregrounded.
-                startTimedVersionCheck(REFRESH_TIME_MS)
-            }
-        }
+        // Version checks are disabled
+        Log.i(TAG, "Version checks disabled - app is decoupled from Session Manager")
+        prefs.setLastVersionCheck()
     }
 
     private val scope = CoroutineScope(Dispatchers.Default)
 
     /**
-     * Schedules fetching version data.
-     *
-     * @param delayMillis The delay before fetching version data. Default value is 4 hours from the
-     * last check or 0 if there was no previous check or if it was longer than 4 hours ago.
+     * Stub implementation that doesn't actually check for updates.
+     * Keeps the same interface to avoid breaking application architecture.
      */
     @JvmOverloads
     fun startTimedVersionCheck(
         delayMillis: Long = REFRESH_TIME_MS + prefs.getLastVersionCheck() - System.currentTimeMillis()
     ) {
-        stopTimedVersionCheck()
-        handler.postDelayed(fetchVersionData, delayMillis)
+        // Do nothing - version checks are disabled
+        Log.d(TAG, "Update checks disabled")
     }
 
     fun stopTimedVersionCheck() {
