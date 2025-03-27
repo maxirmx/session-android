@@ -350,14 +350,14 @@ fun PreviewXCloseDialog() {
             text = stringResource(R.string.urlOpenBrowser),
             showCloseButton = true, // display the 'x' button
             buttons = listOf(
-                DialogButtonModel(
-                    text = GetString(R.string.onboardingTos),
-                    onClick = {}
-                ),
-                DialogButtonModel(
-                    text = GetString(R.string.onboardingPrivacy),
-                    onClick = {}
-                )
+                // DialogButtonModel(
+                //     text = GetString(R.string.onboardingTos),
+                //     onClick = {}
+                // ),
+                // DialogButtonModel(
+                //     text = GetString(R.string.onboardingPrivacy),
+                //     onClick = {}
+                // )
             ),
             onDismissRequest = {}
         )
@@ -369,7 +369,8 @@ fun PreviewXCloseDialog() {
 fun PreviewOpenURLDialog() {
     PreviewTheme {
         OpenURLAlertDialog(
-            url = "https://getsession.org/",
+            // url = "https://getsession.org/",
+            url = "https://github.com/noth-messenger/noth-android",
             onDismissRequest = {}
         )
     }

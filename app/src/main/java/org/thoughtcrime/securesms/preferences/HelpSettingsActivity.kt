@@ -24,11 +24,23 @@ class HelpSettingsActivity: PassphraseRequiredActionBarActivity() {
         super.onCreate(savedInstanceState, ready)
         setContentView(R.layout.activity_fragment_wrapper)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, HelpSettingsFragment())
+            .replace(R.id.fragmentContainer, EmptyHelpSettingsFragment())
             .commit()
     }
 }
 
+// Placeholder fragment to replace the commented out HelpSettingsFragment
+class EmptyHelpSettingsFragment: androidx.fragment.app.Fragment() {
+    override fun onCreateView(
+        inflater: android.view.LayoutInflater,
+        container: android.view.ViewGroup?,
+        savedInstanceState: Bundle?
+    ): android.view.View? {
+        return android.view.View(context)
+    }
+}
+
+/*
 class HelpSettingsFragment: CorrectedPreferenceFragment() {
 
     companion object {
@@ -120,3 +132,4 @@ class HelpSettingsFragment: CorrectedPreferenceFragment() {
     }
 
 }
+*/

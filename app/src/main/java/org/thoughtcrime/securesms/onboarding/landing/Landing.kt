@@ -83,14 +83,14 @@ internal fun LandingScreen(
             text = stringResource(R.string.urlOpenBrowser),
             showCloseButton = true, // display the 'x' button
             buttons = listOf(
-                DialogButtonModel(
-                    text = GetString(R.string.onboardingTos),
-                    onClick = openTerms
-                ),
-                DialogButtonModel(
-                    text = GetString(R.string.onboardingPrivacy),
-                    onClick = openPrivacyPolicy
-                )
+                // DialogButtonModel(
+                //     text = GetString(R.string.onboardingTos),
+                //    onClick = openTerms
+                // ),
+                // DialogButtonModel(
+                //    text = GetString(R.string.q),
+                //    onClick = openPrivacyPolicy
+                // )
             )
         )
     }
@@ -181,14 +181,14 @@ internal fun LandingScreen(
                     .contentDescription(R.string.AccessibilityId_onboardingAccountExists),
                 onClick = loadAccount
             )
-            BorderlessHtmlButton(
-                textId = R.string.onboardingTosPrivacy,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.CenterHorizontally)
-                    .contentDescription(R.string.AccessibilityId_urlOpenBrowser),
-                onClick = { isUrlDialogVisible = true }
-            )
+            // BorderlessHtmlButton(
+            //    textId = R.string.onboardingTosPrivacy,
+            //    modifier = Modifier
+            //        .fillMaxWidth()
+            //        .align(Alignment.CenterHorizontally)
+            //        .contentDescription(R.string.AccessibilityId_urlOpenBrowser),
+            //    onClick = { isUrlDialogVisible = true }
+            // )
             Spacer(modifier = Modifier.height(LocalDimensions.current.xxsSpacing))
         }
     }
