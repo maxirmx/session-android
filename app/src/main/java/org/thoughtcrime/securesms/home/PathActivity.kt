@@ -65,7 +65,7 @@ class PathActivity : PassphraseRequiredActionBarActivity() {
         binding.pathDescription.text = txt
 
         binding.pathRowsContainer.disableClipping()
-        binding.learnMoreButton.setOnClickListener { learnMore() }
+       // binding.learnMoreButton.setOnClickListener { learnMore() }
         update(false)
         registerObservers()
 
