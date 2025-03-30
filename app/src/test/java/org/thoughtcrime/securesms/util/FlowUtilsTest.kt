@@ -27,7 +27,7 @@ class FlowUtilsTest {
         assertEquals(listOf(6, 7, 8, 9, 10), result[1])
     }
 
-/*    @OptIn(ExperimentalCoroutinesApi::class)
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `timedBuffer should emit buffer when timeout expires`() = runTest {
         // Given
@@ -49,5 +49,4 @@ class FlowUtilsTest {
         assertEquals(listOf(1, 2, 3), result[0])
         assertEquals(listOf(4), result[1])
     }
-*/
 }
