@@ -14,6 +14,7 @@ import org.session.libsession.utilities.TextSecurePreferences
 import org.thoughtcrime.securesms.ApplicationContext
 import org.thoughtcrime.securesms.BaseActionBarActivity
 import org.thoughtcrime.securesms.home.startHomeActivity
+import org.thoughtcrime.securesms.onboarding.manager.CreateAccountManager
 import org.thoughtcrime.securesms.onboarding.messagenotifications.startMessageNotificationsActivity
 import org.thoughtcrime.securesms.ui.setComposeContent
 import org.thoughtcrime.securesms.util.setUpActionBarSessionLogo
@@ -28,6 +29,8 @@ class PickDisplayNameActivity : BaseActionBarActivity() {
     internal lateinit var viewModelFactory: PickDisplayNameViewModel.AssistedFactory
     @Inject
     internal lateinit var prefs: TextSecurePreferences
+    @Inject
+    internal lateinit var createAccountManager: CreateAccountManager
 
     private val loadFailed get() = intent.getBooleanExtra(EXTRA_LOAD_FAILED, false)
 
@@ -44,7 +47,18 @@ class PickDisplayNameActivity : BaseActionBarActivity() {
         lifecycleScope.launch(Dispatchers.Main) {
             viewModel.events.collect {
                 when (it) {
-                    is Event.CreateAccount -> startMessageNotificationsActivity(it.profileName)
+                    is Event.CreateAccount -> {
+                        // Skip MessageNotificationsActivity and set pushEnabled = false
+                        prefs.setPushEnabled(false)
+                        // Create account with profile name
+                        lifecycleScope.launch(Dispatchers.IO) {
+                            createAccountManager.createAccount(it.profileName)
+                            launch(Dispatchers.Main) {
+                                startHomeActivity(isNewAccount = true, isFromOnboarding = true)
+                            }
+                        }
+                        // startMessageNotificationsActivity(it.profileName)
+                    }
                     Event.LoadAccountComplete -> startHomeActivity(isNewAccount = false, isFromOnboarding = true)
                 }
             }

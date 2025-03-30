@@ -12,6 +12,7 @@ import network.noth.messenger.R
 import org.session.libsession.utilities.TextSecurePreferences
 import org.thoughtcrime.securesms.BaseActionBarActivity
 import org.thoughtcrime.securesms.onboarding.manager.LoadAccountManager
+import org.thoughtcrime.securesms.onboarding.loading.LoadingActivity
 import org.thoughtcrime.securesms.onboarding.messagenotifications.MessageNotificationsActivity
 import org.thoughtcrime.securesms.permissions.Permissions
 import org.thoughtcrime.securesms.ui.setComposeContent
@@ -37,7 +38,10 @@ class LoadAccountActivity : BaseActionBarActivity() {
         lifecycleScope.launch {
             viewModel.events.collect {
                 loadAccountManager.load(it.mnemonic)
-                start<MessageNotificationsActivity>()
+                // Skip MessageNotificationsActivity and set pushEnabled = false
+                prefs.setPushEnabled(false)
+                // start<MessageNotificationsActivity>()
+                start<LoadingActivity>()
             }
         }
 
