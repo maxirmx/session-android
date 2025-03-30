@@ -4,11 +4,13 @@
 
     <PreferenceCategory android:title="@string/notificationsStrategy">
 
+        <!-- Fast Mode switch removed as requested
         <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
             android:key="pref_key_use_fcm"
             android:title="@string/useFastMode"
             android:summary="@string/notificationsFastModeDescription"
             android:defaultValue="false" />
+        -->
 
         <Preference android:title="@string/notificationsGoToDevice"
             android:key="pref_notification_priority" />

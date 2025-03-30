@@ -29,7 +29,8 @@ class NotificationsPreferenceFragment : CorrectedPreferenceFragment() {
     override fun onCreate(paramBundle: Bundle?) {
         super.onCreate(paramBundle)
 
-        // Set up FCM toggle
+        // Fast Mode toggle removed as requested
+        /*
         val fcmKey = "pref_key_use_fcm"
         val fcmPreference: SwitchPreferenceCompat = findPreference(fcmKey)!!
         fcmPreference.isChecked = prefs.pushEnabled.value
@@ -37,6 +38,10 @@ class NotificationsPreferenceFragment : CorrectedPreferenceFragment() {
                 prefs.setPushEnabled(newValue as Boolean)
                 true
             }
+        */
+
+        // Always set push notifications to disabled
+        prefs.setPushEnabled(false)
 
         prefs.setNotificationRingtone(
             NotificationChannels.getMessageRingtone(requireContext()).toString()
