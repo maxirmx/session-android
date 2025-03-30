@@ -31,7 +31,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.LocalisedTimeUtil.toShortTwoPartString
 import org.session.libsession.messaging.groups.LegacyGroupDeprecationManager
 import org.session.libsession.snode.SnodeAPI
@@ -544,7 +544,7 @@ class ConversationReactionOverlay : FrameLayout {
 
         // Prepare
         val containsControlMessage = message.isControlMessage
-        
+
         val hasText = !message.body.isEmpty()
         val openGroup = lokiThreadDatabase.getOpenGroupChat(message.threadId)
         val userPublicKey = textSecurePreferences.getLocalNumber()!!

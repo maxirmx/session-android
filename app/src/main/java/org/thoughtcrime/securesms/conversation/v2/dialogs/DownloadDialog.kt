@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import com.squareup.phrase.Phrase
 import dagger.hilt.android.AndroidEntryPoint
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.messaging.jobs.JobQueue
 import org.session.libsession.messaging.sending_receiving.attachments.DatabaseAttachment

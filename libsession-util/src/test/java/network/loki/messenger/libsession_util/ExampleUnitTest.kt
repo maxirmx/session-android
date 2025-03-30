@@ -1,4 +1,4 @@
-package network.loki.messenger.libsession_util
+package network.noth.messenger.libsession_util
 
 import org.junit.Test
 

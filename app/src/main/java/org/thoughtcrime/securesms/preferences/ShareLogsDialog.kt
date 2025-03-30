@@ -25,8 +25,8 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import network.loki.messenger.BuildConfig
-import network.loki.messenger.R
+import network.noth.messenger.BuildConfig
+import network.noth.messenger.R
 import org.session.libsession.utilities.StringSubstitutionConstants.APP_NAME_KEY
 import org.session.libsignal.utilities.ExternalStorageUtil
 import org.session.libsignal.utilities.Log
@@ -140,7 +140,7 @@ class ShareLogsDialog(private val updateCallback: (Boolean)->Unit): DialogFragme
 
                 // Regardless of the job's success it has now completed so update the UI
                 updateCallback(false)
-                
+
                 dismiss()
             }
         }

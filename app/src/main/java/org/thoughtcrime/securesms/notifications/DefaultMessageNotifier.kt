@@ -39,7 +39,7 @@ import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.concurrent.Volatile
 import me.leolin.shortcutbadger.ShortcutBadger
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.messaging.sending_receiving.notifications.MessageNotifier
 import org.session.libsession.messaging.utilities.SodiumUtilities.blindedKeyPair
 import org.session.libsession.utilities.Address.Companion.fromSerialized
@@ -627,7 +627,7 @@ class DefaultMessageNotifier : MessageNotifier {
         }
 
         companion object {
-            const val REMINDER_ACTION: String = "network.loki.securesms.MessageNotifier.REMINDER_ACTION"
+            const val REMINDER_ACTION: String = "network.noth.securesms.MessageNotifier.REMINDER_ACTION"
         }
     }
 

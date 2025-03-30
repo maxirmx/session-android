@@ -28,7 +28,7 @@ import org.session.libsession.utilities.recipients.Recipient;
 import org.session.libsignal.utilities.Log;
 import org.session.libsignal.utilities.guava.Optional;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 /**
  * Allows the user to select a media folder to explore.

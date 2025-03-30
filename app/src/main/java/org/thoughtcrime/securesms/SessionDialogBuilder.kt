@@ -24,7 +24,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.text.HtmlCompat
 import androidx.core.view.updateMargins
 import androidx.fragment.app.Fragment
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.thoughtcrime.securesms.util.toPx
 
 @DslMarker

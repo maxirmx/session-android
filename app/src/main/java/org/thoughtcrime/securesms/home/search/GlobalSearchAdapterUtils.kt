@@ -7,7 +7,7 @@ import android.text.style.StyleSpan
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import java.util.Locale
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.messaging.contacts.Contact
 import org.session.libsession.utilities.Address
 import org.session.libsession.utilities.recipients.Recipient

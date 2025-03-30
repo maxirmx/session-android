@@ -1,7 +1,7 @@
 package org.thoughtcrime.securesms.permissions
 
 import android.content.Context
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.thoughtcrime.securesms.showSessionDialog
 
 class SettingsDialog {

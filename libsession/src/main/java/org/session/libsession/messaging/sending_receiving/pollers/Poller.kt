@@ -5,11 +5,11 @@ import androidx.core.util.valueIterator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
-import network.loki.messenger.libsession_util.ConfigBase
-import network.loki.messenger.libsession_util.Contacts
-import network.loki.messenger.libsession_util.ConversationVolatileConfig
-import network.loki.messenger.libsession_util.UserGroupsConfig
-import network.loki.messenger.libsession_util.UserProfile
+import network.noth.messenger.libsession_util.ConfigBase
+import network.noth.messenger.libsession_util.Contacts
+import network.noth.messenger.libsession_util.ConversationVolatileConfig
+import network.noth.messenger.libsession_util.UserGroupsConfig
+import network.noth.messenger.libsession_util.UserProfile
 import java.util.Timer
 import java.util.TimerTask
 import kotlin.time.Duration.Companion.days

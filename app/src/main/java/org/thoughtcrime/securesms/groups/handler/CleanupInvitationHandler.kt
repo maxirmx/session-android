@@ -3,8 +3,8 @@ package org.thoughtcrime.securesms.groups.handler
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import network.loki.messenger.libsession_util.allWithStatus
-import network.loki.messenger.libsession_util.util.GroupMember
+import network.noth.messenger.libsession_util.allWithStatus
+import network.noth.messenger.libsession_util.util.GroupMember
 import org.session.libsession.messaging.groups.GroupScope
 import org.session.libsession.utilities.ConfigFactoryProtocol
 import org.session.libsession.utilities.TextSecurePreferences

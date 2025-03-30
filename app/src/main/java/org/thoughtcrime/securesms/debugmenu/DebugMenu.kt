@@ -41,8 +41,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
-import network.loki.messenger.BuildConfig
-import network.loki.messenger.R
+import network.noth.messenger.BuildConfig
+import network.noth.messenger.R
 import org.thoughtcrime.securesms.debugmenu.DebugMenuViewModel.Commands.*
 import org.session.libsession.messaging.groups.LegacyGroupDeprecationManager
 import org.thoughtcrime.securesms.ui.AlertDialog

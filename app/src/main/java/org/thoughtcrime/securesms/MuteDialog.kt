@@ -3,7 +3,7 @@ package org.thoughtcrime.securesms
 import android.content.Context
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.LocalisedTimeUtil
 import org.session.libsession.utilities.StringSubstitutionConstants.TIME_LARGE_KEY
 import org.thoughtcrime.securesms.ui.getSubbedString

@@ -68,9 +68,9 @@ import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ActivityConversationV2Binding
-import network.loki.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ActivityConversationV2Binding
+import network.noth.messenger.libsession_util.util.ExpiryMode
 import nl.komponents.kovenant.ui.successUi
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.messaging.groups.GroupManagerV2
@@ -867,7 +867,7 @@ class ConversationActivityV2 : PassphraseRequiredActionBarActivity(), InputBarDe
                             .apply {
                                 // Append a space as a placeholder
                                 append(" ")
-                                
+
                                 // we need to add the inline icon
                                 val drawable = ContextCompat.getDrawable(this@ConversationActivityV2, R.drawable.ic_external)!!
                                 val imageSize = toPx(10, resources)

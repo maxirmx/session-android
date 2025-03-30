@@ -15,7 +15,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import network.loki.messenger.databinding.ViewGlobalSearchInputBinding
+import network.noth.messenger.databinding.ViewGlobalSearchInputBinding
 import org.thoughtcrime.securesms.util.SimpleTextWatcher
 import org.thoughtcrime.securesms.util.addTextChangedListener
 

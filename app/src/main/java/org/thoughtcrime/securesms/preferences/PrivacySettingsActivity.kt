@@ -2,7 +2,7 @@ package org.thoughtcrime.securesms.preferences
 
 import android.os.Bundle
 import dagger.hilt.android.AndroidEntryPoint
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.TextSecurePreferences.Companion.CALL_NOTIFICATIONS_ENABLED
 import org.thoughtcrime.securesms.PassphraseRequiredActionBarActivity
 

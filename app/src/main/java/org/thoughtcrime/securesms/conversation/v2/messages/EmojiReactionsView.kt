@@ -13,8 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.setPadding
 import com.google.android.flexbox.JustifyContent
 import com.squareup.phrase.Phrase
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewEmojiReactionsBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewEmojiReactionsBinding
 import org.session.libsession.utilities.StringSubstitutionConstants.COUNT_KEY
 import org.session.libsession.utilities.TextSecurePreferences.Companion.getLocalNumber
 import org.session.libsession.utilities.ThemeUtil

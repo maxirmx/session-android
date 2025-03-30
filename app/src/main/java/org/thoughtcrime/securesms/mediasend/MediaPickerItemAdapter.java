@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import com.bumptech.glide.RequestManager;
 
 import org.thoughtcrime.securesms.util.MediaUtil;

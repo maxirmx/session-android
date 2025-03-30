@@ -2,7 +2,7 @@ package org.thoughtcrime.securesms.sskenvironment
 
 import android.content.Context
 import dagger.Lazy
-import network.loki.messenger.libsession_util.util.UserPic
+import network.noth.messenger.libsession_util.util.UserPic
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.messaging.contacts.Contact
 import org.session.libsession.messaging.jobs.JobQueue

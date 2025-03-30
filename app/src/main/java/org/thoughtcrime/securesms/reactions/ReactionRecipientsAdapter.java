@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.session.libsignal.utilities.AccountId;
 import java.util.Collections;
 import java.util.List;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import org.thoughtcrime.securesms.components.ProfilePictureView;
 import org.thoughtcrime.securesms.components.emoji.EmojiImageView;
 import org.thoughtcrime.securesms.database.model.MessageId;

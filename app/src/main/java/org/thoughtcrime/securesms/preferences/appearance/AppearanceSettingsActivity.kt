@@ -9,8 +9,8 @@ import androidx.core.view.children
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ActivityAppearanceSettingsBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ActivityAppearanceSettingsBinding
 import org.session.libsession.utilities.TextSecurePreferences.Companion.CLASSIC_DARK
 import org.session.libsession.utilities.TextSecurePreferences.Companion.CLASSIC_LIGHT
 import org.session.libsession.utilities.TextSecurePreferences.Companion.OCEAN_DARK

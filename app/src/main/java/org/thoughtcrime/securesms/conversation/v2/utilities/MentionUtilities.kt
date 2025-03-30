@@ -7,7 +7,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.util.Range
-import network.loki.messenger.R
+import network.noth.messenger.R
 import nl.komponents.kovenant.combine.Tuple2
 import org.session.libsession.messaging.contacts.Contact
 import org.session.libsession.messaging.open_groups.OpenGroup

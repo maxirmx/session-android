@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import com.canhub.cropper.CropImageContractOptions
 import com.canhub.cropper.CropImageOptions
 import com.canhub.cropper.CropImageView
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.getColorFromAttr
 import org.session.libsignal.utilities.ExternalStorageUtil.getImageDir
 import org.session.libsignal.utilities.Log
@@ -109,7 +109,7 @@ class AvatarSelection(
         }
 
         if (includeClear) {
-            extraIntents.add(Intent("network.loki.securesms.action.CLEAR_PROFILE_PHOTO"))
+            extraIntents.add(Intent("network.noth.securesms.action.CLEAR_PROFILE_PHOTO"))
         }
 
         val chooserIntent = Intent.createChooser(

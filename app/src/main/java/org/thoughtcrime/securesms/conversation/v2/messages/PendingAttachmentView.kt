@@ -6,8 +6,8 @@ import android.widget.LinearLayout
 import androidx.annotation.ColorInt
 import com.squareup.phrase.Phrase
 import dagger.hilt.android.AndroidEntryPoint
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewPendingAttachmentBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewPendingAttachmentBinding
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.messaging.sending_receiving.attachments.DatabaseAttachment
 import org.session.libsession.utilities.StringSubstitutionConstants.FILE_TYPE_KEY

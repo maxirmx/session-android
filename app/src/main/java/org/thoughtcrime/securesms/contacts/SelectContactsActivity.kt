@@ -9,8 +9,8 @@ import android.view.View
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ActivitySelectContactsBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ActivitySelectContactsBinding
 import org.thoughtcrime.securesms.PassphraseRequiredActionBarActivity
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint

@@ -33,7 +33,7 @@ import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 /**
  * LinearLayout that, when a view container, will report back when it thinks a soft keyboard

@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.ThemeUtil
 import org.thoughtcrime.securesms.database.CursorRecyclerViewAdapter
 import org.thoughtcrime.securesms.database.model.ThreadRecord

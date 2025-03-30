@@ -19,7 +19,7 @@ import org.thoughtcrime.securesms.video.VideoPlayer;
 
 import java.io.IOException;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class MediaView extends FrameLayout {
 

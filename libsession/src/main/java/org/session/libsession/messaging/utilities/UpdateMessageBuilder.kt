@@ -2,7 +2,7 @@ package org.session.libsession.messaging.utilities
 
 import android.content.Context
 import com.squareup.phrase.Phrase
-import network.loki.messenger.libsession_util.getOrNull
+import network.noth.messenger.libsession_util.getOrNull
 import org.session.libsession.R
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.messaging.calls.CallMessageType

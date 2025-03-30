@@ -1,4 +1,4 @@
-package network.loki.messenger.libsession_util.util
+package network.noth.messenger.libsession_util.util
 
 data class ConfigPush(val config: ByteArray, val seqNo: Long, val obsoleteHashes: List<String>) {
     override fun equals(other: Any?): Boolean {

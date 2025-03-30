@@ -70,7 +70,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import network.loki.messenger.libsession_util.util.GroupInfo;
+import network.noth.messenger.libsession_util.util.GroupInfo;
 
 public class ThreadDatabase extends Database {
 

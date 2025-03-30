@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
-import network.loki.messenger.databinding.ContactSelectionListFragmentBinding
+import network.noth.messenger.databinding.ContactSelectionListFragmentBinding
 import org.session.libsession.utilities.recipients.Recipient
 import org.session.libsignal.utilities.Log
 import com.bumptech.glide.Glide

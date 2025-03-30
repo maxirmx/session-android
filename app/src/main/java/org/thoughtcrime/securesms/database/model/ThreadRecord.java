@@ -43,7 +43,7 @@ import org.thoughtcrime.securesms.database.SmsDatabase;
 import org.thoughtcrime.securesms.ui.UtilKt;
 
 import kotlin.Pair;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 /**
  * The message record model which represents thread heading messages.

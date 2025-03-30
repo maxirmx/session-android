@@ -7,7 +7,7 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.thoughtcrime.securesms.ui.components.ActionAppBar
 import org.thoughtcrime.securesms.ui.components.AppBarBackIcon
 import org.thoughtcrime.securesms.ui.theme.LocalColors

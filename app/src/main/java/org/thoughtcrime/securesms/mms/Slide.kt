@@ -21,7 +21,7 @@ import android.content.res.Resources
 import android.net.Uri
 import androidx.annotation.DrawableRes
 import com.squareup.phrase.Phrase
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.messaging.sending_receiving.attachments.Attachment
 import org.session.libsession.messaging.sending_receiving.attachments.AttachmentTransferProgress
 import org.session.libsession.messaging.sending_receiving.attachments.UriAttachment

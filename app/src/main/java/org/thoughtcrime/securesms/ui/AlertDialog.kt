@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
 import androidx.compose.ui.unit.times
 import com.squareup.phrase.Phrase
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.StringSubstitutionConstants.URL_KEY
 import org.thoughtcrime.securesms.copyURLToClipboard
 import org.thoughtcrime.securesms.openUrl

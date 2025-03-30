@@ -49,7 +49,7 @@ class MarkReadReceiver : BroadcastReceiver() {
 
     companion object {
         private val TAG = MarkReadReceiver::class.java.simpleName
-        const val CLEAR_ACTION = "network.loki.securesms.notifications.CLEAR"
+        const val CLEAR_ACTION = "network.noth.securesms.notifications.CLEAR"
         const val THREAD_IDS_EXTRA = "thread_ids"
         const val NOTIFICATION_ID_EXTRA = "notification_id"
 

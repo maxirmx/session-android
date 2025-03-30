@@ -5,15 +5,15 @@ import android.net.Uri
 import com.goterl.lazysodium.utils.KeyPair
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.security.MessageDigest
-import network.loki.messenger.libsession_util.ConfigBase.Companion.PRIORITY_HIDDEN
-import network.loki.messenger.libsession_util.ConfigBase.Companion.PRIORITY_PINNED
-import network.loki.messenger.libsession_util.ConfigBase.Companion.PRIORITY_VISIBLE
-import network.loki.messenger.libsession_util.getOrNull
-import network.loki.messenger.libsession_util.util.BaseCommunityInfo
-import network.loki.messenger.libsession_util.util.ExpiryMode
-import network.loki.messenger.libsession_util.util.GroupDisplayInfo
-import network.loki.messenger.libsession_util.util.GroupInfo
-import network.loki.messenger.libsession_util.util.UserPic
+import network.noth.messenger.libsession_util.ConfigBase.Companion.PRIORITY_HIDDEN
+import network.noth.messenger.libsession_util.ConfigBase.Companion.PRIORITY_PINNED
+import network.noth.messenger.libsession_util.ConfigBase.Companion.PRIORITY_VISIBLE
+import network.noth.messenger.libsession_util.getOrNull
+import network.noth.messenger.libsession_util.util.BaseCommunityInfo
+import network.noth.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.libsession_util.util.GroupDisplayInfo
+import network.noth.messenger.libsession_util.util.GroupInfo
+import network.noth.messenger.libsession_util.util.UserPic
 import org.session.libsession.avatars.AvatarHelper
 import org.session.libsession.database.MessageDataProvider
 import org.session.libsession.database.StorageProtocol
@@ -93,8 +93,8 @@ import org.thoughtcrime.securesms.mms.PartAuthority
 import org.thoughtcrime.securesms.util.SessionMetaProtocol
 import javax.inject.Inject
 import javax.inject.Singleton
-import network.loki.messenger.libsession_util.util.Contact as LibSessionContact
-import network.loki.messenger.libsession_util.util.GroupMember as LibSessionGroupMember
+import network.noth.messenger.libsession_util.util.Contact as LibSessionContact
+import network.noth.messenger.libsession_util.util.GroupMember as LibSessionGroupMember
 
 private const val TAG = "Storage"
 

@@ -13,10 +13,10 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.withContext
-import network.loki.messenger.R
-import network.loki.messenger.libsession_util.allWithStatus
-import network.loki.messenger.libsession_util.util.GroupDisplayInfo
-import network.loki.messenger.libsession_util.util.GroupMember
+import network.noth.messenger.R
+import network.noth.messenger.libsession_util.allWithStatus
+import network.noth.messenger.libsession_util.util.GroupDisplayInfo
+import network.noth.messenger.libsession_util.util.GroupMember
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.utilities.ConfigFactoryProtocol
 import org.session.libsession.utilities.ConfigUpdateNotification

@@ -33,10 +33,10 @@ import kotlin.math.abs
 import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewEmojiReactionsBinding
-import network.loki.messenger.databinding.ViewVisibleMessageBinding
-import network.loki.messenger.databinding.ViewstubVisibleMessageMarkerContainerBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewEmojiReactionsBinding
+import network.noth.messenger.databinding.ViewVisibleMessageBinding
+import network.noth.messenger.databinding.ViewstubVisibleMessageMarkerContainerBinding
 import org.session.libsession.messaging.contacts.Contact
 import org.session.libsession.messaging.contacts.Contact.ContactContext
 import org.session.libsession.messaging.open_groups.OpenGroupApi
@@ -60,7 +60,7 @@ import org.thoughtcrime.securesms.groups.OpenGroupManager
 import org.thoughtcrime.securesms.home.UserDetailsBottomSheet
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
-import network.loki.messenger.libsession_util.getOrNull
+import network.noth.messenger.libsession_util.getOrNull
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.utilities.Address.Companion.fromSerialized
 import org.session.libsession.utilities.ConfigFactoryProtocol

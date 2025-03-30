@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewGlobalSearchHeaderBinding
-import network.loki.messenger.databinding.ViewGlobalSearchResultBinding
-import network.loki.messenger.databinding.ViewGlobalSearchSubheaderBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewGlobalSearchHeaderBinding
+import network.noth.messenger.databinding.ViewGlobalSearchResultBinding
+import network.noth.messenger.databinding.ViewGlobalSearchSubheaderBinding
 import org.session.libsession.utilities.GroupRecord
 import org.thoughtcrime.securesms.search.model.MessageResult
 import org.thoughtcrime.securesms.ui.GetString

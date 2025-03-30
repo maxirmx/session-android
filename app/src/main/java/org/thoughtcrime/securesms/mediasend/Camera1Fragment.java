@@ -34,7 +34,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import org.session.libsignal.utilities.Log;
 import com.bumptech.glide.Glide;
 import org.session.libsession.utilities.ServiceUtil;

@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.messaging.groups.LegacyGroupDeprecationManager
 import org.session.libsession.messaging.utilities.SodiumUtilities

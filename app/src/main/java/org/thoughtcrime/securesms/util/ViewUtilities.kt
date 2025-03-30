@@ -13,7 +13,7 @@ import android.util.TypedValue
 import android.view.View
 import androidx.annotation.ColorInt
 import androidx.annotation.DimenRes
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.getColorFromAttr
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
