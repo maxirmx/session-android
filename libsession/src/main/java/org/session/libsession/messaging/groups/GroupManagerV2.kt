@@ -1,6 +1,6 @@
 package org.session.libsession.messaging.groups
 
-import network.loki.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.libsession_util.util.ExpiryMode
 import org.session.libsession.messaging.messages.control.GroupUpdated
 import org.session.libsession.utilities.recipients.Recipient
 import org.session.libsignal.protos.SignalServiceProtos.DataMessage.GroupUpdateDeleteMemberContentMessage

@@ -43,7 +43,7 @@ import org.thoughtcrime.securesms.mms.MmsException;
 import java.util.Collections;
 import java.util.List;
 
-import network.loki.messenger.libsession_util.util.ExpiryMode;
+import network.noth.messenger.libsession_util.util.ExpiryMode;
 
 /**
  * Get the response text from the Android Auto and sends an message as a reply

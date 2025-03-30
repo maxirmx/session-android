@@ -1,7 +1,7 @@
 package org.session.libsession.messaging.file_server
 
 import android.util.Base64
-import network.loki.messenger.libsession_util.util.BlindKeyAPI
+import network.noth.messenger.libsession_util.util.BlindKeyAPI
 import nl.komponents.kovenant.Promise
 import nl.komponents.kovenant.functional.map
 import okhttp3.Headers.Companion.toHeaders

@@ -5,7 +5,7 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import network.loki.messenger.libsession_util.util.UserPic
+import network.noth.messenger.libsession_util.util.UserPic
 import okio.Buffer
 import org.session.libsession.avatars.AvatarHelper
 import org.session.libsession.messaging.MessagingModuleConfiguration

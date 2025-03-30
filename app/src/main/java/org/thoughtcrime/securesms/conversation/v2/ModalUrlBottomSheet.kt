@@ -16,15 +16,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.squareup.phrase.Phrase
-import network.loki.messenger.R
-import network.loki.messenger.databinding.FragmentModalUrlBottomSheetBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.FragmentModalUrlBottomSheetBinding
 import org.session.libsession.utilities.StringSubstitutionConstants.URL_KEY
 import org.session.libsignal.utilities.Log
 import org.thoughtcrime.securesms.ui.getSubbedString
 
 class ModalUrlBottomSheet(private val url: String): BottomSheetDialogFragment(), View.OnClickListener {
     private lateinit var binding: FragmentModalUrlBottomSheetBinding
-    
+
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View {
         binding = FragmentModalUrlBottomSheetBinding.inflate(inflater, container, false)
         return binding.root

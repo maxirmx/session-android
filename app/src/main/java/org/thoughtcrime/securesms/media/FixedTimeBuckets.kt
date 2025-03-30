@@ -2,7 +2,7 @@ package org.thoughtcrime.securesms.media
 
 import android.content.Context
 import androidx.annotation.StringRes
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.thoughtcrime.securesms.util.DateUtils
 import org.thoughtcrime.securesms.util.RelativeDay
 import java.time.ZonedDateTime

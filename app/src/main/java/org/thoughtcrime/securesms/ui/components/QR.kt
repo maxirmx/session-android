@@ -63,7 +63,7 @@ import com.google.zxing.qrcode.QRCodeReader
 import com.squareup.phrase.Phrase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.StringSubstitutionConstants.APP_NAME_KEY
 import org.session.libsignal.utilities.Log
 import org.thoughtcrime.securesms.permissions.Permissions

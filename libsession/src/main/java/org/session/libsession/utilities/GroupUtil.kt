@@ -1,7 +1,7 @@
 package org.session.libsession.utilities
 
-import network.loki.messenger.libsession_util.util.GroupMember
-import network.loki.messenger.libsession_util.util.UserPic
+import network.noth.messenger.libsession_util.util.GroupMember
+import network.noth.messenger.libsession_util.util.UserPic
 import org.session.libsession.messaging.open_groups.OpenGroup
 import org.session.libsignal.messages.SignalServiceGroup
 import org.session.libsignal.utilities.AccountId

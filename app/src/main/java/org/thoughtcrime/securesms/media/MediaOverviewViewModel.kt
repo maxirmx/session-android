@@ -22,7 +22,7 @@ import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.messaging.messages.control.DataExtractionNotification
 import org.session.libsession.messaging.sending_receiving.MessageSender
 import org.session.libsession.snode.SnodeAPI
@@ -424,4 +424,3 @@ data class MediaOverviewItem(
         return slide.getPlaceholderRes(context.theme)
     }
 }
-

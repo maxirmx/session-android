@@ -5,7 +5,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class SquareFrameLayout extends FrameLayout {
 

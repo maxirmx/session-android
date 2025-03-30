@@ -15,8 +15,8 @@ configurations.configureEach {
     exclude module: "commons-logging"
 }
 
-def canonicalVersionCode = 2
-def canonicalVersionName = "2.0.1"
+def canonicalVersionCode = 3
+def canonicalVersionName = "2.1.0"
 
 def postFixSize = 10
 def abiPostFix = ['armeabi-v7a' : 1,
@@ -38,7 +38,7 @@ def getGitHash = { ->
 
 android {
     compileSdkVersion androidCompileSdkVersion
-    namespace 'network.loki.messenger'
+    namespace 'network.noth.messenger'
     useLibrary 'org.apache.http.legacy'
 
     compileOptions {
@@ -257,7 +257,7 @@ android {
     }
 
 
-    testNamespace 'network.loki.messenger.test'
+    testNamespace 'network.noth.messenger.test'
     lint {
         abortOnError true
         baseline file('lint-baseline.xml')

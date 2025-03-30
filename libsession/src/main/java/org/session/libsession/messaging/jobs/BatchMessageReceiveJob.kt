@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
-import network.loki.messenger.libsession_util.ConfigBase
+import network.noth.messenger.libsession_util.ConfigBase
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.messaging.messages.Destination
 import org.session.libsession.messaging.messages.Message

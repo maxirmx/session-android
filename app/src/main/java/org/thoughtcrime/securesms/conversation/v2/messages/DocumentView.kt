@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.widget.LinearLayout
 import androidx.annotation.ColorInt
 import androidx.core.view.isVisible
-import network.loki.messenger.databinding.ViewDocumentBinding
+import network.noth.messenger.databinding.ViewDocumentBinding
 import org.thoughtcrime.securesms.database.model.MmsMessageRecord
 
 class DocumentView : LinearLayout {

@@ -1,7 +1,7 @@
 package org.thoughtcrime.securesms.conversation.disappearingmessages.ui
 
-import network.loki.messenger.R
-import network.loki.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.R
+import network.noth.messenger.libsession_util.util.ExpiryMode
 import org.thoughtcrime.securesms.conversation.disappearingmessages.ExpiryType
 import org.thoughtcrime.securesms.conversation.disappearingmessages.State
 import org.thoughtcrime.securesms.ui.GetString

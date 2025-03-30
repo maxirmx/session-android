@@ -13,7 +13,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.snode.OnionRequestAPI
 import org.thoughtcrime.securesms.util.toPx
 

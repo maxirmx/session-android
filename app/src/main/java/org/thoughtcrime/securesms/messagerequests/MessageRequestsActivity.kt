@@ -13,8 +13,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ActivityMessageRequestsBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ActivityMessageRequestsBinding
 import org.session.libsession.utilities.StringSubstitutionConstants.NAME_KEY
 import org.session.libsession.utilities.Address
 import org.session.libsession.utilities.recipients.Recipient

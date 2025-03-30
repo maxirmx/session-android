@@ -38,7 +38,7 @@ import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
 import androidx.core.os.CancellationSignal;
 import com.squareup.phrase.Phrase;
 import java.security.Signature;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import org.session.libsession.utilities.TextSecurePreferences;
 import org.session.libsignal.utilities.Log;
 import org.thoughtcrime.securesms.components.AnimatingToggle;

@@ -1,7 +1,7 @@
 package org.thoughtcrime.securesms.components.emoji;
 
 import android.net.Uri;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import org.thoughtcrime.securesms.emoji.EmojiCategory;
 import java.util.Arrays;
 import java.util.List;

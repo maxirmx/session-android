@@ -17,8 +17,8 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ThumbnailViewBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ThumbnailViewBinding
 import org.session.libsession.messaging.sending_receiving.attachments.AttachmentTransferProgress
 import org.session.libsession.utilities.Util.equals
 import org.session.libsignal.utilities.ListenableFuture

@@ -10,7 +10,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class DeliveryStatusView extends FrameLayout {
 

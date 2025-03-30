@@ -36,7 +36,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 

@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.thoughtcrime.securesms.conversation.start.StartConversationFragment.Companion.PEEK_RATIO
 import org.thoughtcrime.securesms.ui.LoadingArcOr
 import org.thoughtcrime.securesms.ui.components.AppBarCloseIcon

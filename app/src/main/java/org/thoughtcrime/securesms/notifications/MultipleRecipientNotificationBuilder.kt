@@ -7,7 +7,7 @@ import android.content.Intent
 import android.text.SpannableStringBuilder
 import androidx.core.app.NotificationCompat
 import com.squareup.phrase.Phrase
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.messaging.contacts.Contact
 import org.session.libsession.utilities.NotificationPrivacyPreference

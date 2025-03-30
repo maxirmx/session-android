@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import com.annimon.stream.Stream
 import com.pnikosis.materialishprogress.ProgressWheel
 import kotlin.math.max
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode

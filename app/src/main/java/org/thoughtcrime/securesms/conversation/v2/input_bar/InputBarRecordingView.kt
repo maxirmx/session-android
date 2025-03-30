@@ -17,8 +17,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewInputBarRecordingBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewInputBarRecordingBinding
 import org.thoughtcrime.securesms.util.animateSizeChange
 import org.thoughtcrime.securesms.util.disableClipping
 import org.thoughtcrime.securesms.util.toPx

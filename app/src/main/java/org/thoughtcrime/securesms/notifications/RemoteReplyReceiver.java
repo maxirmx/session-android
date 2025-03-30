@@ -49,7 +49,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
-import network.loki.messenger.libsession_util.util.ExpiryMode;
+import network.noth.messenger.libsession_util.util.ExpiryMode;
 
 /**
  * Get the response text from the Wearable Device and sends an message as a reply

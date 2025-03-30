@@ -55,9 +55,9 @@ import com.canhub.cropper.CropImageContract
 import com.squareup.phrase.Phrase
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import network.loki.messenger.BuildConfig
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ActivitySettingsBinding
+import network.noth.messenger.BuildConfig
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ActivitySettingsBinding
 import org.session.libsession.snode.OnionRequestAPI
 import org.session.libsession.utilities.SSKEnvironment.ProfileManagerProtocol
 import org.session.libsession.utilities.StringSubstitutionConstants.VERSION_KEY

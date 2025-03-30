@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.ResourcesCompat
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.ViewUtil
 import org.thoughtcrime.securesms.showSessionDialog
 

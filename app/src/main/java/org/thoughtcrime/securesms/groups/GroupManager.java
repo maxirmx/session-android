@@ -23,7 +23,7 @@ import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Set;
 
-import network.loki.messenger.libsession_util.UserGroupsConfig;
+import network.noth.messenger.libsession_util.UserGroupsConfig;
 
 public class GroupManager {
 

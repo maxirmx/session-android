@@ -15,7 +15,7 @@ import org.thoughtcrime.securesms.home.HomeActivity;
 import org.session.libsession.utilities.recipients.Recipient;
 import org.thoughtcrime.securesms.util.CommunicationActions;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class ShortcutLauncherActivity extends AppCompatActivity {
 

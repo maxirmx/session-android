@@ -57,7 +57,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import dagger.hilt.android.AndroidEntryPoint;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 /**
  * An activity to quickly share content with contacts

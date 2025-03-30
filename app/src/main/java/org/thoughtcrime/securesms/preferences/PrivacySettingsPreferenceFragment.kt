@@ -10,8 +10,8 @@ import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceDataStore
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import network.loki.messenger.BuildConfig
-import network.loki.messenger.R
+import network.noth.messenger.BuildConfig
+import network.noth.messenger.R
 import org.session.libsession.utilities.TextSecurePreferences
 import org.session.libsession.utilities.TextSecurePreferences.Companion.isPasswordDisabled
 import org.session.libsession.utilities.TextSecurePreferences.Companion.setScreenLockEnabled
