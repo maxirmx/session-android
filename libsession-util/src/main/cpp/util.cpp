@@ -47,7 +47,7 @@ namespace util {
     }
 
     jobject serialize_user_pic(JNIEnv *env, session::config::profile_pic pic) {
-        jclass returnObjectClass = env->FindClass("network/loki/messenger/libsession_util/util/UserPic");
+        jclass returnObjectClass = env->FindClass("network/noth/messenger/libsession_util/util/UserPic");
         jmethodID constructor = env->GetMethodID(returnObjectClass, "<init>", "(Ljava/lang/String;[B)V");
         jstring url = env->NewStringUTF(pic.url.data());
         jbyteArray byteArray = util::bytes_from_ustring(env, pic.key);
@@ -55,7 +55,7 @@ namespace util {
     }
 
     std::pair<jstring, jbyteArray> deserialize_user_pic(JNIEnv *env, jobject user_pic) {
-        jclass userPicClass = env->FindClass("network/loki/messenger/libsession_util/util/UserPic");
+        jclass userPicClass = env->FindClass("network/noth/messenger/libsession_util/util/UserPic");
         jfieldID picField = env->GetFieldID(userPicClass, "url", "Ljava/lang/String;");
         jfieldID keyField = env->GetFieldID(userPicClass, "key", "[B");
         auto pic = (jstring)env->GetObjectField(user_pic, picField);
@@ -64,7 +64,7 @@ namespace util {
     }
 
     jobject serialize_base_community(JNIEnv *env, const session::config::community& community) {
-        jclass base_community_clazz = env->FindClass("network/loki/messenger/libsession_util/util/BaseCommunityInfo");
+        jclass base_community_clazz = env->FindClass("network/noth/messenger/libsession_util/util/BaseCommunityInfo");
         jmethodID base_community_constructor = env->GetMethodID(base_community_clazz, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
         auto base_url = env->NewStringUTF(community.base_url().data());
         auto room = env->NewStringUTF(community.room().data());
@@ -74,7 +74,7 @@ namespace util {
     }
 
     session::config::community deserialize_base_community(JNIEnv *env, jobject base_community) {
-        jclass base_community_clazz = env->FindClass("network/loki/messenger/libsession_util/util/BaseCommunityInfo");
+        jclass base_community_clazz = env->FindClass("network/noth/messenger/libsession_util/util/BaseCommunityInfo");
         jfieldID base_url_field = env->GetFieldID(base_community_clazz, "baseUrl", "Ljava/lang/String;");
         jfieldID room_field = env->GetFieldID(base_community_clazz, "room", "Ljava/lang/String;");
         jfieldID pubkey_hex_field = env->GetFieldID(base_community_clazz, "pubKeyHex", "Ljava/lang/String;");
@@ -94,11 +94,11 @@ namespace util {
     }
 
     jobject serialize_expiry(JNIEnv *env, const session::config::expiration_mode& mode, const std::chrono::seconds& time_seconds) {
-        jclass none = env->FindClass("network/loki/messenger/libsession_util/util/ExpiryMode$NONE");
-        jfieldID none_instance = env->GetStaticFieldID(none, "INSTANCE", "Lnetwork/loki/messenger/libsession_util/util/ExpiryMode$NONE;");
-        jclass after_send = env->FindClass("network/loki/messenger/libsession_util/util/ExpiryMode$AfterSend");
+        jclass none = env->FindClass("network/noth/messenger/libsession_util/util/ExpiryMode$NONE");
+        jfieldID none_instance = env->GetStaticFieldID(none, "INSTANCE", "Lnetwork/noth/messenger/libsession_util/util/ExpiryMode$NONE;");
+        jclass after_send = env->FindClass("network/noth/messenger/libsession_util/util/ExpiryMode$AfterSend");
         jmethodID send_init = env->GetMethodID(after_send, "<init>", "(J)V");
-        jclass after_read = env->FindClass("network/loki/messenger/libsession_util/util/ExpiryMode$AfterRead");
+        jclass after_read = env->FindClass("network/noth/messenger/libsession_util/util/ExpiryMode$AfterRead");
         jmethodID read_init = env->GetMethodID(after_read, "<init>", "(J)V");
 
         if (mode == session::config::expiration_mode::none) {
@@ -112,9 +112,9 @@ namespace util {
     }
 
     std::pair<session::config::expiration_mode, long> deserialize_expiry(JNIEnv *env, jobject expiry_mode) {
-        jclass parent = env->FindClass("network/loki/messenger/libsession_util/util/ExpiryMode");
-        jclass after_read = env->FindClass("network/loki/messenger/libsession_util/util/ExpiryMode$AfterRead");
-        jclass after_send = env->FindClass("network/loki/messenger/libsession_util/util/ExpiryMode$AfterSend");
+        jclass parent = env->FindClass("network/noth/messenger/libsession_util/util/ExpiryMode");
+        jclass after_read = env->FindClass("network/noth/messenger/libsession_util/util/ExpiryMode$AfterRead");
+        jclass after_send = env->FindClass("network/noth/messenger/libsession_util/util/ExpiryMode$AfterSend");
         jfieldID duration_seconds = env->GetFieldID(parent, "expirySeconds", "J");
 
         jclass object_class = env->GetObjectClass(expiry_mode);
@@ -139,7 +139,7 @@ namespace util {
     }
 
     jobject serialize_group_member(JNIEnv* env, const session::config::groups::member& member) {
-        jclass group_member_class = env->FindClass("network/loki/messenger/libsession_util/util/GroupMember");
+        jclass group_member_class = env->FindClass("network/noth/messenger/libsession_util/util/GroupMember");
         jmethodID constructor = env->GetMethodID(group_member_class, "<init>", "(J)V");
         return env->NewObject(group_member_class,
                               constructor,
@@ -148,7 +148,7 @@ namespace util {
     }
 
     jobject deserialize_swarm_auth(JNIEnv *env, session::config::groups::Keys::swarm_auth auth) {
-        jclass swarm_auth_class = env->FindClass("network/loki/messenger/libsession_util/GroupKeysConfig$SwarmAuth");
+        jclass swarm_auth_class = env->FindClass("network/noth/messenger/libsession_util/GroupKeysConfig$SwarmAuth");
         jmethodID constructor = env->GetMethodID(swarm_auth_class, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
         jstring sub_account = env->NewStringUTF(auth.subaccount.data());
         jstring sub_account_sig = env->NewStringUTF(auth.subaccount_sig.data());
@@ -199,13 +199,13 @@ namespace util {
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_util_Sodium_ed25519KeyPair(JNIEnv *env, jobject thiz, jbyteArray seed) {
+Java_network_noth_messenger_libsession_1util_util_Sodium_ed25519KeyPair(JNIEnv *env, jobject thiz, jbyteArray seed) {
     std::array<unsigned char, 32> ed_pk; // NOLINT(cppcoreguidelines-pro-type-member-init)
     std::array<unsigned char, 64> ed_sk; // NOLINT(cppcoreguidelines-pro-type-member-init)
     auto seed_bytes = util::ustring_from_bytes(env, seed);
     crypto_sign_ed25519_seed_keypair(ed_pk.data(), ed_sk.data(), seed_bytes.data());
 
-    jclass kp_class = env->FindClass("network/loki/messenger/libsession_util/util/KeyPair");
+    jclass kp_class = env->FindClass("network/noth/messenger/libsession_util/util/KeyPair");
     jmethodID kp_constructor = env->GetMethodID(kp_class, "<init>", "([B[B)V");
 
     jbyteArray pk_jarray = util::bytes_from_ustring(env, session::ustring_view {ed_pk.data(), ed_pk.size()});
@@ -217,7 +217,7 @@ Java_network_loki_messenger_libsession_1util_util_Sodium_ed25519KeyPair(JNIEnv *
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_network_loki_messenger_libsession_1util_util_Sodium_ed25519PkToCurve25519(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_Sodium_ed25519PkToCurve25519(JNIEnv *env,
                                                                                jobject thiz,
                                                                                jbyteArray pk) {
     auto ed_pk = util::ustring_from_bytes(env, pk);
@@ -234,7 +234,7 @@ Java_network_loki_messenger_libsession_1util_util_Sodium_ed25519PkToCurve25519(J
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_network_loki_messenger_libsession_1util_util_Sodium_encryptForMultipleSimple(
+Java_network_noth_messenger_libsession_1util_util_Sodium_encryptForMultipleSimple(
         JNIEnv *env, jobject thiz, jobjectArray messages, jobjectArray recipients,
         jbyteArray ed25519_secret_key, jstring domain) {
     // messages and recipients have to be the same size
@@ -283,7 +283,7 @@ Java_network_loki_messenger_libsession_1util_util_Sodium_encryptForMultipleSimpl
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_network_loki_messenger_libsession_1util_util_Sodium_decryptForMultipleSimple(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_Sodium_decryptForMultipleSimple(JNIEnv *env,
                                                                                   jobject thiz,
                                                                                   jbyteArray encoded,
                                                                                   jbyteArray secret_key,
@@ -310,7 +310,7 @@ Java_network_loki_messenger_libsession_1util_util_Sodium_decryptForMultipleSimpl
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_util_BaseCommunityInfo_00024Companion_parseFullUrl(
+Java_network_noth_messenger_libsession_1util_util_BaseCommunityInfo_00024Companion_parseFullUrl(
         JNIEnv *env, jobject thiz, jstring full_url) {
     auto bytes = env->GetStringUTFChars(full_url, nullptr);
     auto [base, room, pk] = session::config::community::parse_full_url(bytes);
@@ -328,7 +328,7 @@ Java_network_loki_messenger_libsession_1util_util_BaseCommunityInfo_00024Compani
 }
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_network_loki_messenger_libsession_1util_util_BaseCommunityInfo_fullUrl(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_BaseCommunityInfo_fullUrl(JNIEnv *env,
                                                                             jobject thiz) {
     auto deserialized = util::deserialize_base_community(env, thiz);
     auto full_url = deserialized.full_url();
@@ -397,11 +397,11 @@ Java_org_session_libsignal_utilities_Namespace_REVOKED_1GROUP_1MESSAGES(JNIEnv *
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_Config_free(JNIEnv *env, jobject thiz) {
-    jclass baseClass = env->FindClass("network/loki/messenger/libsession_util/Config");
+Java_network_noth_messenger_libsession_1util_Config_free(JNIEnv *env, jobject thiz) {
+    jclass baseClass = env->FindClass("network/noth/messenger/libsession_util/Config");
     jfieldID pointerField = env->GetFieldID(baseClass, "pointer", "J");
-    jclass sig = env->FindClass("network/loki/messenger/libsession_util/ConfigSig");
-    jclass base = env->FindClass("network/loki/messenger/libsession_util/ConfigBase");
+    jclass sig = env->FindClass("network/noth/messenger/libsession_util/ConfigSig");
+    jclass base = env->FindClass("network/noth/messenger/libsession_util/ConfigBase");
     jclass ours = env->GetObjectClass(thiz);
     if (env->IsSameObject(sig, ours)) {
         // config sig object

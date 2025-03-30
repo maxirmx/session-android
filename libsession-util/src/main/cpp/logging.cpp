@@ -9,7 +9,7 @@
 #define LOG_TAG "LibSession"
 
 extern "C" JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_Logger_initLogger(JNIEnv* env, jclass clazz) {
+Java_network_noth_messenger_libsession_1util_util_Logger_initLogger(JNIEnv* env, jclass clazz) {
     session::add_logger([](std::string_view msg, std::string_view category, session::LogLevel level) {
         android_LogPriority prio = ANDROID_LOG_VERBOSE;
 

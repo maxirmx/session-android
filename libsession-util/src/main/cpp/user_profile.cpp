@@ -3,7 +3,7 @@
 
 extern "C" {
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_setName(
+Java_network_noth_messenger_libsession_1util_UserProfile_setName(
         JNIEnv* env,
         jobject thiz,
         jstring newName) {
@@ -15,7 +15,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_setName(
 }
 
 JNIEXPORT jstring JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_getName(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_UserProfile_getName(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
     auto name = profile->get_name();
@@ -25,7 +25,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_getName(JNIEnv *env, jo
 }
 
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_getPic(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_UserProfile_getPic(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
     auto pic = profile->get_profile_pic();
@@ -36,7 +36,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_getPic(JNIEnv *env, job
 }
 
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_setPic(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_UserProfile_setPic(JNIEnv *env, jobject thiz,
                                                                 jobject user_pic) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
@@ -50,7 +50,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_setPic(JNIEnv *env, job
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_setNtsPriority(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_UserProfile_setNtsPriority(JNIEnv *env, jobject thiz,
                                                                         jlong priority) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
@@ -58,7 +58,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_setNtsPriority(JNIEnv *
 }
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_getNtsPriority(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_UserProfile_getNtsPriority(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
     return profile->get_nts_priority();
@@ -66,7 +66,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_getNtsPriority(JNIEnv *
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_setNtsExpiry(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_UserProfile_setNtsExpiry(JNIEnv *env, jobject thiz,
                                                                       jobject expiry_mode) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
@@ -76,7 +76,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_setNtsExpiry(JNIEnv *en
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_getNtsExpiry(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_UserProfile_getNtsExpiry(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
     auto nts_expiry = profile->get_nts_expiry();
@@ -90,7 +90,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_getNtsExpiry(JNIEnv *en
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_getCommunityMessageRequests(
+Java_network_noth_messenger_libsession_1util_UserProfile_getCommunityMessageRequests(
         JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
@@ -103,7 +103,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_getCommunityMessageRequ
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_setCommunityMessageRequests(
+Java_network_noth_messenger_libsession_1util_UserProfile_setCommunityMessageRequests(
         JNIEnv *env, jobject thiz, jboolean blocks) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);
@@ -111,7 +111,7 @@ Java_network_loki_messenger_libsession_1util_UserProfile_setCommunityMessageRequ
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_UserProfile_isBlockCommunityMessageRequestsSet(
+Java_network_noth_messenger_libsession_1util_UserProfile_isBlockCommunityMessageRequestsSet(
         JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto profile = ptrToProfile(env, thiz);

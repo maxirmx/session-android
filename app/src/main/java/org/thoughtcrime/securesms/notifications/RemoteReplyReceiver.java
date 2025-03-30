@@ -58,7 +58,7 @@ import network.noth.messenger.libsession_util.util.ExpiryMode;
 public class RemoteReplyReceiver extends BroadcastReceiver {
 
   public static final String TAG           = RemoteReplyReceiver.class.getSimpleName();
-  public static final String REPLY_ACTION  = "network.loki.securesms.notifications.WEAR_REPLY";
+  public static final String REPLY_ACTION  = "network.noth.securesms.notifications.WEAR_REPLY";
   public static final String ADDRESS_EXTRA = "address";
   public static final String REPLY_METHOD  = "reply_method";
 

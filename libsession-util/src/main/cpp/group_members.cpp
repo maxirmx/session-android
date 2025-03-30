@@ -4,7 +4,7 @@
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_00024Companion_newInstance(
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_00024Companion_newInstance(
         JNIEnv *env, jobject thiz, jbyteArray pub_key, jbyteArray secret_key,
         jbyteArray initial_dump) {
     std::lock_guard lock{util::util_mutex_};
@@ -26,7 +26,7 @@ Java_network_loki_messenger_libsession_1util_GroupMembersConfig_00024Companion_n
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_all(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_all(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto config = ptrToMembers(env, thiz);
     jclass stack = env->FindClass("java/util/Stack");
@@ -42,7 +42,7 @@ Java_network_loki_messenger_libsession_1util_GroupMembersConfig_all(JNIEnv *env,
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_erase(JNIEnv *env, jobject thiz, jstring pub_key_hex) {
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_erase(JNIEnv *env, jobject thiz, jstring pub_key_hex) {
     auto config = ptrToMembers(env, thiz);
     auto member_id = env->GetStringUTFChars(pub_key_hex, nullptr);
     auto erased = config->erase(member_id);
@@ -52,7 +52,7 @@ Java_network_loki_messenger_libsession_1util_GroupMembersConfig_erase(JNIEnv *en
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_get(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_get(JNIEnv *env, jobject thiz,
                                                                     jstring pub_key_hex) {
     return jni_utils::run_catching_cxx_exception_or_throws<jobject>(env, [=]() -> jobject {
         std::lock_guard lock{util::util_mutex_};
@@ -70,7 +70,7 @@ Java_network_loki_messenger_libsession_1util_GroupMembersConfig_get(JNIEnv *env,
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_getOrConstruct(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_getOrConstruct(JNIEnv *env,
                                                                                jobject thiz,
                                                                                jstring pub_key_hex) {
     std::lock_guard lock{util::util_mutex_};
@@ -84,7 +84,7 @@ Java_network_loki_messenger_libsession_1util_GroupMembersConfig_getOrConstruct(J
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_set(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_set(JNIEnv *env, jobject thiz,
                                                                     jobject group_member) {
     std::lock_guard lock{util::util_mutex_};
     ptrToMembers(env, thiz)->set(*ptrToMember(env, group_member));
@@ -92,70 +92,70 @@ Java_network_loki_messenger_libsession_1util_GroupMembersConfig_set(JNIEnv *env,
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setInvited(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setInvited(JNIEnv *env,
                                                                          jobject thiz) {
     ptrToMember(env, thiz)->invite_status = session::config::groups::STATUS_NOT_SENT;
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setInviteSent(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setInviteSent(JNIEnv *env,
                                                                             jobject thiz) {
     ptrToMember(env, thiz)->set_invite_sent();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setInviteFailed(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setInviteFailed(JNIEnv *env,
                                                                               jobject thiz) {
     ptrToMember(env, thiz)->set_invite_failed();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setInviteAccepted(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setInviteAccepted(JNIEnv *env,
                                                                           jobject thiz) {
     ptrToMember(env, thiz)->set_invite_accepted();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setPromoted(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setPromoted(JNIEnv *env,
                                                                           jobject thiz) {
     ptrToMember(env, thiz)->set_promoted();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setPromotionSent(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setPromotionSent(JNIEnv *env,
                                                                                jobject thiz) {
     ptrToMember(env, thiz)->set_promotion_sent();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setPromotionFailed(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setPromotionFailed(JNIEnv *env,
                                                                                  jobject thiz) {
     ptrToMember(env, thiz)->set_promotion_failed();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setPromotionAccepted(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setPromotionAccepted(JNIEnv *env,
                                                                                    jobject thiz) {
     ptrToMember(env, thiz)->set_promotion_accepted();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setRemoved(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setRemoved(JNIEnv *env, jobject thiz,
                                                                          jboolean also_remove_messages) {
     ptrToMember(env, thiz)->set_removed(also_remove_messages);
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setName(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setName(JNIEnv *env, jobject thiz,
                                                                       jstring name) {
     auto name_bytes = env->GetStringUTFChars(name, nullptr);
     ptrToMember(env, thiz)->set_name(name_bytes);
@@ -164,47 +164,47 @@ Java_network_loki_messenger_libsession_1util_util_GroupMember_setName(JNIEnv *en
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_nameString(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_nameString(JNIEnv *env,
                                                                          jobject thiz) {
     return util::jstringFromOptional(env, ptrToMember(env, thiz)->name);
 }
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_isAdmin(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_util_GroupMember_isAdmin(JNIEnv *env, jobject thiz) {
     return ptrToMember(env, thiz)->admin;
 }
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_isSupplement(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_isSupplement(JNIEnv *env,
                                                                            jobject thiz) {
     return ptrToMember(env, thiz)->supplement;
 }
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_accountIdString(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_accountIdString(JNIEnv *env,
                                                                               jobject thiz) {
     return util::jstringFromOptional(env, ptrToMember(env, thiz)->session_id);
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_destroy(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_util_GroupMember_destroy(JNIEnv *env, jobject thiz) {
     delete ptrToMember(env, thiz);
 }
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_profilePic(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_profilePic(JNIEnv *env,
                                                                          jobject thiz) {
     return util::serialize_user_pic(env, ptrToMember(env, thiz)->profile_picture);
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setProfilePic(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setProfilePic(JNIEnv *env,
                                                                             jobject thiz,
                                                                             jobject pic) {
     const auto [jurl, jkey] = util::deserialize_user_pic(env, pic);
@@ -217,7 +217,7 @@ Java_network_loki_messenger_libsession_1util_util_GroupMember_setProfilePic(JNIE
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_util_GroupMember_setSupplement(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_util_GroupMember_setSupplement(JNIEnv *env,
                                                                             jobject thiz,
                                                                             jboolean supplement) {
     ptrToMember(env, thiz)->supplement = supplement;
@@ -226,13 +226,13 @@ Java_network_loki_messenger_libsession_1util_util_GroupMember_setSupplement(JNIE
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_statusInt(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_statusInt(JNIEnv *env, jobject thiz,
                                                                        jobject group_member) {
     return static_cast<jint>(ptrToMembers(env, thiz)->get_status(*ptrToMember(env, group_member)));
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupMembersConfig_setPendingSend(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupMembersConfig_setPendingSend(JNIEnv *env,
                                                                                jobject thiz,
                                                                                jstring pub_key_hex,
                                                                                jboolean pending) {

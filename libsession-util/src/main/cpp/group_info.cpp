@@ -4,7 +4,7 @@
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_00024Companion_newInstance(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_00024Companion_newInstance(JNIEnv *env,
                                                                                         jobject thiz,
                                                                                         jbyteArray pub_key,
                                                                                         jbyteArray secret_key,
@@ -28,7 +28,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_00024Companion_newI
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_destroyGroup(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_destroyGroup(JNIEnv *env,
                                                                           jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -38,14 +38,14 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_destroyGroup(JNIEnv
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getCreated(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_getCreated(JNIEnv *env, jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
     return util::jlongFromOptional(env, group_info->get_created());
 }
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getDeleteAttachmentsBefore(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_getDeleteAttachmentsBefore(JNIEnv *env,
                                                                                         jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -53,7 +53,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getDeleteAttachment
 }
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getDeleteBefore(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_getDeleteBefore(JNIEnv *env,
                                                                              jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -62,7 +62,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getDeleteBefore(JNI
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getExpiryTimer(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_getExpiryTimer(JNIEnv *env,
                                                                             jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -76,7 +76,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getExpiryTimer(JNIE
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getName(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_getName(JNIEnv *env, jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
     return util::jstringFromOptional(env, group_info->get_name());
@@ -84,7 +84,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getName(JNIEnv *env
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getProfilePic(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_getProfilePic(JNIEnv *env,
                                                                            jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -93,7 +93,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getProfilePic(JNIEn
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_isDestroyed(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_isDestroyed(JNIEnv *env,
                                                                          jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -102,7 +102,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_isDestroyed(JNIEnv 
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setCreated(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_setCreated(JNIEnv *env, jobject thiz,
                                                                         jlong created_at) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -111,7 +111,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setCreated(JNIEnv *
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setDeleteAttachmentsBefore(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_setDeleteAttachmentsBefore(JNIEnv *env,
                                                                                         jobject thiz,
                                                                                         jlong delete_before) {
     std::lock_guard guard{util::util_mutex_};
@@ -121,7 +121,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setDeleteAttachment
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setDeleteBefore(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_setDeleteBefore(JNIEnv *env,
                                                                              jobject thiz,
                                                                              jlong delete_before) {
     std::lock_guard guard{util::util_mutex_};
@@ -131,7 +131,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setDeleteBefore(JNI
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setExpiryTimer(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_setExpiryTimer(JNIEnv *env,
                                                                             jobject thiz,
                                                                             jlong  expire_seconds) {
     std::lock_guard guard{util::util_mutex_};
@@ -141,7 +141,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setExpiryTimer(JNIE
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setName(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_setName(JNIEnv *env, jobject thiz,
                                                                      jstring new_name) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -152,7 +152,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setName(JNIEnv *env
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setProfilePic(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_setProfilePic(JNIEnv *env,
                                                                            jobject thiz,
                                                                            jobject new_profile_pic) {
     std::lock_guard guard{util::util_mutex_};
@@ -166,7 +166,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setProfilePic(JNIEn
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_storageNamespace(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_storageNamespace(JNIEnv *env,
                                                                               jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -175,7 +175,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_storageNamespace(JN
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_id(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_id(JNIEnv *env, jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
     return util::serialize_account_id(env, group_info->id);
@@ -183,7 +183,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_id(JNIEnv *env, job
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getDescription(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_getDescription(JNIEnv *env,
                                                                             jobject thiz) {
     std::lock_guard guard{util::util_mutex_};
     auto group_info = ptrToInfo(env, thiz);
@@ -197,7 +197,7 @@ Java_network_loki_messenger_libsession_1util_GroupInfoConfig_getDescription(JNIE
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_GroupInfoConfig_setDescription(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_GroupInfoConfig_setDescription(JNIEnv *env,
                                                                             jobject thiz,
                                                                             jstring new_description) {
     std::lock_guard guard{util::util_mutex_};

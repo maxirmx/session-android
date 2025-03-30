@@ -627,7 +627,7 @@ class DefaultMessageNotifier : MessageNotifier {
         }
 
         companion object {
-            const val REMINDER_ACTION: String = "network.loki.securesms.MessageNotifier.REMINDER_ACTION"
+            const val REMINDER_ACTION: String = "network.noth.securesms.MessageNotifier.REMINDER_ACTION"
         }
     }
 
