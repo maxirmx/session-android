@@ -4,28 +4,28 @@
 
 extern "C" {
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_dirty(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_dirty(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto* configBase = ptrToConfigBase(env, thiz);
     return configBase->is_dirty();
 }
 
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_needsPush(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_needsPush(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto config = ptrToConfigBase(env, thiz);
     return config->needs_push();
 }
 
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_needsDump(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_needsDump(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto config = ptrToConfigBase(env, thiz);
     return config->needs_dump();
 }
 
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_push(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_push(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto config = ptrToConfigBase(env, thiz);
     auto push_tuple = config->push();
@@ -34,7 +34,7 @@ Java_network_loki_messenger_libsession_1util_ConfigBase_push(JNIEnv *env, jobjec
 
     jbyteArray returnByteArray = util::bytes_from_ustring(env, to_push_str);
     jlong seqNo = std::get<0>(push_tuple);
-    jclass returnObjectClass = env->FindClass("network/loki/messenger/libsession_util/util/ConfigPush");
+    jclass returnObjectClass = env->FindClass("network/noth/messenger/libsession_util/util/ConfigPush");
     jclass stackClass = env->FindClass("java/util/Stack");
     jmethodID methodId = env->GetMethodID(returnObjectClass, "<init>", "([BJLjava/util/List;)V");
     jmethodID stack_init = env->GetMethodID(stackClass, "<init>", "()V");
@@ -49,13 +49,13 @@ Java_network_loki_messenger_libsession_1util_ConfigBase_push(JNIEnv *env, jobjec
 }
 
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_free(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_free(JNIEnv *env, jobject thiz) {
     auto config = ptrToConfigBase(env, thiz);
     delete config;
 }
 
 JNIEXPORT jbyteArray JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_dump(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_dump(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto config = ptrToConfigBase(env, thiz);
     auto dumped = config->dump();
@@ -64,14 +64,14 @@ Java_network_loki_messenger_libsession_1util_ConfigBase_dump(JNIEnv *env, jobjec
 }
 
 JNIEXPORT jstring JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_encryptionDomain(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_ConfigBase_encryptionDomain(JNIEnv *env,
                                                                          jobject thiz) {
     auto conf = ptrToConfigBase(env, thiz);
     return env->NewStringUTF(conf->encryption_domain());
 }
 
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_confirmPushed(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_ConfigBase_confirmPushed(JNIEnv *env, jobject thiz,
                                                                       jlong seq_no,
                                                                       jstring new_hash_jstring) {
     std::lock_guard lock{util::util_mutex_};
@@ -84,7 +84,7 @@ Java_network_loki_messenger_libsession_1util_ConfigBase_confirmPushed(JNIEnv *en
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "bugprone-reserved-identifier"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_merge___3Lkotlin_Pair_2(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_ConfigBase_merge___3Lkotlin_Pair_2(JNIEnv *env, jobject thiz,
                                                                      jobjectArray to_merge) {
     return jni_utils::run_catching_cxx_exception_or_throws<jobject>(env, [=] {
         std::lock_guard lock{util::util_mutex_};
@@ -106,19 +106,19 @@ Java_network_loki_messenger_libsession_1util_ConfigBase_merge___3Lkotlin_Pair_2(
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_configNamespace(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_configNamespace(JNIEnv *env, jobject thiz) {
     auto conf = ptrToConfigBase(env, thiz);
     return (std::int16_t) conf->storage_namespace();
 }
 extern "C"
 JNIEXPORT jclass JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_00024Companion_kindFor(JNIEnv *env,
+Java_network_noth_messenger_libsession_1util_ConfigBase_00024Companion_kindFor(JNIEnv *env,
                                                                                jobject thiz,
                                                                                jint config_namespace) {
-    auto user_class = env->FindClass("network/loki/messenger/libsession_util/UserProfile");
-    auto contact_class = env->FindClass("network/loki/messenger/libsession_util/Contacts");
-    auto convo_volatile_class = env->FindClass("network/loki/messenger/libsession_util/ConversationVolatileConfig");
-    auto group_list_class = env->FindClass("network/loki/messenger/libsession_util/UserGroupsConfig");
+    auto user_class = env->FindClass("network/noth/messenger/libsession_util/UserProfile");
+    auto contact_class = env->FindClass("network/noth/messenger/libsession_util/Contacts");
+    auto convo_volatile_class = env->FindClass("network/noth/messenger/libsession_util/ConversationVolatileConfig");
+    auto group_list_class = env->FindClass("network/noth/messenger/libsession_util/UserGroupsConfig");
     switch (config_namespace) {
         case (int)session::config::Namespace::UserProfile:
             return user_class;
@@ -135,7 +135,7 @@ Java_network_loki_messenger_libsession_1util_ConfigBase_00024Companion_kindFor(J
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigBase_currentHashes(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_ConfigBase_currentHashes(JNIEnv *env, jobject thiz) {
     std::lock_guard lock{util::util_mutex_};
     auto conf = ptrToConfigBase(env, thiz);
     jclass stack = env->FindClass("java/util/Stack");

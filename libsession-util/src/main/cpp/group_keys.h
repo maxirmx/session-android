@@ -4,7 +4,7 @@
 #include "util.h"
 
 inline session::config::groups::Keys* ptrToKeys(JNIEnv* env, jobject obj) {
-    jclass configClass = env->FindClass("network/loki/messenger/libsession_util/GroupKeysConfig");
+    jclass configClass = env->FindClass("network/noth/messenger/libsession_util/GroupKeysConfig");
     jfieldID pointerField = env->GetFieldID(configClass, "pointer", "J");
     return (session::config::groups::Keys*) env->GetLongField(obj, pointerField);
 }

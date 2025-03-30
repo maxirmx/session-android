@@ -8,7 +8,7 @@
 #include "session/config/user_groups.hpp"
 
 inline session::config::UserGroups* ptrToUserGroups(JNIEnv *env, jobject obj) {
-    jclass configClass = env->FindClass("network/loki/messenger/libsession_util/UserGroupsConfig");
+    jclass configClass = env->FindClass("network/noth/messenger/libsession_util/UserGroupsConfig");
     jfieldID pointerField = env->GetFieldID(configClass, "pointer", "J");
     return (session::config::UserGroups*) env->GetLongField(obj, pointerField);
 }
@@ -43,7 +43,7 @@ inline void deserialize_members_into(JNIEnv *env, jobject members_map, session::
 }
 
 inline session::config::legacy_group_info deserialize_legacy_group_info(JNIEnv *env, jobject info, session::config::UserGroups* conf) {
-    auto clazz = env->FindClass("network/loki/messenger/libsession_util/util/GroupInfo$LegacyGroupInfo");
+    auto clazz = env->FindClass("network/noth/messenger/libsession_util/util/GroupInfo$LegacyGroupInfo");
     auto id_field = env->GetFieldID(clazz, "accountId", "Ljava/lang/String;");
     auto name_field = env->GetFieldID(clazz, "name", "Ljava/lang/String;");
     auto members_field = env->GetFieldID(clazz, "members", "Ljava/util/Map;");
@@ -83,8 +83,8 @@ inline session::config::legacy_group_info deserialize_legacy_group_info(JNIEnv *
 }
 
 inline session::config::community_info deserialize_community_info(JNIEnv *env, jobject info, session::config::UserGroups* conf) {
-    auto clazz = env->FindClass("network/loki/messenger/libsession_util/util/GroupInfo$CommunityGroupInfo");
-    auto base_info = env->GetFieldID(clazz, "community", "Lnetwork/loki/messenger/libsession_util/util/BaseCommunityInfo;");
+    auto clazz = env->FindClass("network/noth/messenger/libsession_util/util/GroupInfo$CommunityGroupInfo");
+    auto base_info = env->GetFieldID(clazz, "community", "Lnetwork/noth/messenger/libsession_util/util/BaseCommunityInfo;");
     auto priority = env->GetFieldID(clazz, "priority", "J");
     jobject base_community_info = env->GetObjectField(info, base_info);
     auto deserialized_base_info = util::deserialize_base_community(env, base_community_info);
@@ -120,7 +120,7 @@ inline jobject serialize_legacy_group_info(JNIEnv *env, session::config::legacy_
     long long priority = info.priority;
     long long joined_at = info.joined_at;
 
-    jclass legacy_group_class = env->FindClass("network/loki/messenger/libsession_util/util/GroupInfo$LegacyGroupInfo");
+    jclass legacy_group_class = env->FindClass("network/noth/messenger/libsession_util/util/GroupInfo$LegacyGroupInfo");
     jmethodID constructor = env->GetMethodID(legacy_group_class, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;[B[BJJJ)V");
     jobject serialized = env->NewObject(legacy_group_class, constructor, account_id, name, members, enc_pubkey, enc_seckey, priority, (jlong) info.disappearing_timer.count(), joined_at);
     return serialized;
@@ -132,7 +132,7 @@ inline jobject serialize_closed_group_info(JNIEnv* env, session::config::group_i
     jbyteArray auth_bytes = info.auth_data.empty() ? nullptr : util::bytes_from_ustring(env, info.auth_data);
     jstring name = util::jstringFromOptional(env, info.name);
 
-    jclass group_info_class = env->FindClass("network/loki/messenger/libsession_util/util/GroupInfo$ClosedGroupInfo");
+    jclass group_info_class = env->FindClass("network/noth/messenger/libsession_util/util/GroupInfo$ClosedGroupInfo");
     jmethodID constructor = env->GetMethodID(group_info_class, "<init>","(Lorg/session/libsignal/utilities/AccountId;[B[BJZLjava/lang/String;ZZJ)V");
     jobject return_object = env->NewObject(group_info_class,constructor,
                                            session_id, admin_bytes, auth_bytes, (jlong)info.priority, info.invited, name,
@@ -141,7 +141,7 @@ inline jobject serialize_closed_group_info(JNIEnv* env, session::config::group_i
 }
 
 inline session::config::group_info deserialize_closed_group_info(JNIEnv* env, jobject info_serialized) {
-    jclass closed_group_class = env->FindClass("network/loki/messenger/libsession_util/util/GroupInfo$ClosedGroupInfo");
+    jclass closed_group_class = env->FindClass("network/noth/messenger/libsession_util/util/GroupInfo$ClosedGroupInfo");
     jfieldID id_field = env->GetFieldID(closed_group_class, "groupAccountId", "Lorg/session/libsignal/utilities/AccountId;");
     jfieldID secret_field = env->GetFieldID(closed_group_class, "adminKey", "[B");
     jfieldID auth_field = env->GetFieldID(closed_group_class, "authData", "[B");
@@ -185,8 +185,8 @@ inline session::config::group_info deserialize_closed_group_info(JNIEnv* env, jo
 inline jobject serialize_community_info(JNIEnv *env, session::config::community_info info) {
     auto priority = (long long)info.priority;
     auto serialized_info = util::serialize_base_community(env, info);
-    auto clazz = env->FindClass("network/loki/messenger/libsession_util/util/GroupInfo$CommunityGroupInfo");
-    jmethodID constructor = env->GetMethodID(clazz, "<init>", "(Lnetwork/loki/messenger/libsession_util/util/BaseCommunityInfo;J)V");
+    auto clazz = env->FindClass("network/noth/messenger/libsession_util/util/GroupInfo$CommunityGroupInfo");
+    jmethodID constructor = env->GetMethodID(clazz, "<init>", "(Lnetwork/noth/messenger/libsession_util/util/BaseCommunityInfo;J)V");
     jobject serialized = env->NewObject(clazz, constructor, serialized_info, priority);
     return serialized;
 }

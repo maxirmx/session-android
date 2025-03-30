@@ -348,7 +348,7 @@
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="network.loki.securesms.notifications.CLEAR" />
+                <action android:name="network.noth.securesms.notifications.CLEAR" />
             </intent-filter>
         </receiver>
         <receiver
@@ -356,33 +356,33 @@
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="network.loki.securesms.notifications.WEAR_REPLY" />
+                <action android:name="network.noth.securesms.notifications.WEAR_REPLY" />
             </intent-filter>
         </receiver>
         <receiver
             android:name="org.thoughtcrime.securesms.notifications.AndroidAutoHeardReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="network.loki.securesms.notifications.ANDROID_AUTO_HEARD" />
+                <action android:name="network.noth.securesms.notifications.ANDROID_AUTO_HEARD" />
             </intent-filter>
         </receiver>
         <receiver
             android:name="org.thoughtcrime.securesms.notifications.AndroidAutoReplyReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="network.loki.securesms.notifications.ANDROID_AUTO_REPLY" />
+                <action android:name="network.noth.securesms.notifications.ANDROID_AUTO_REPLY" />
             </intent-filter>
         </receiver>
         <receiver android:name="org.thoughtcrime.securesms.service.ExpirationListener" />
 
         <provider
             android:name="org.thoughtcrime.securesms.providers.PartProvider"
-            android:authorities="network.loki.provider.securesms"
+            android:authorities="network.noth.provider.securesms"
             android:exported="false"
             android:grantUriPermissions="true" />
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="network.loki.securesms.fileprovider"
+            android:authorities="network.noth.securesms.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -391,34 +391,34 @@
         </provider>
         <provider
             android:name="org.thoughtcrime.securesms.database.DatabaseContentProviders$Conversation"
-            android:authorities="network.loki.securesms.database.conversation"
+            android:authorities="network.noth.securesms.database.conversation"
             android:exported="false" />
         <provider
             android:name="org.thoughtcrime.securesms.database.DatabaseContentProviders$ConversationList"
-            android:authorities="network.loki.securesms.database.conversationlist"
+            android:authorities="network.noth.securesms.database.conversationlist"
             android:exported="false" />
         <provider
             android:name="org.thoughtcrime.securesms.database.DatabaseContentProviders$Attachment"
-            android:authorities="network.loki.securesms.database.attachment"
+            android:authorities="network.noth.securesms.database.attachment"
             android:exported="false" />
         <provider
             android:name="org.thoughtcrime.securesms.database.DatabaseContentProviders$Sticker"
-            android:authorities="network.loki.securesms.database.sticker"
+            android:authorities="network.noth.securesms.database.sticker"
             android:exported="false" />
         <provider
             android:name="org.thoughtcrime.securesms.database.DatabaseContentProviders$StickerPack"
-            android:authorities="network.loki.securesms.database.stickerpack"
+            android:authorities="network.noth.securesms.database.stickerpack"
             android:exported="false" />
         <provider
             android:name="org.thoughtcrime.securesms.database.DatabaseContentProviders$Recipient"
-            android:authorities="network.loki.securesms.database.recipient"
+            android:authorities="network.noth.securesms.database.recipient"
             android:exported="false" />
 
         <receiver android:name="org.thoughtcrime.securesms.service.BootReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="network.loki.securesms.RESTART" />
+                <action android:name="network.noth.securesms.RESTART" />
             </intent-filter>
         </receiver>
         <receiver android:name="org.thoughtcrime.securesms.service.PersistentConnectionBootListener"
@@ -436,7 +436,7 @@
         <receiver android:name="org.thoughtcrime.securesms.notifications.DeleteNotificationReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="network.loki.securesms.DELETE_NOTIFICATION" />
+                <action android:name="network.noth.securesms.DELETE_NOTIFICATION" />
             </intent-filter>
         </receiver>
         <receiver

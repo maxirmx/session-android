@@ -9,7 +9,7 @@ import org.thoughtcrime.securesms.dependencies.DatabaseComponent;
 
 public class DeleteNotificationReceiver extends BroadcastReceiver {
 
-  public static String DELETE_NOTIFICATION_ACTION = "network.loki.securesms.DELETE_NOTIFICATION";
+  public static String DELETE_NOTIFICATION_ACTION = "network.noth.securesms.DELETE_NOTIFICATION";
 
   public static String EXTRA_IDS = "message_ids";
   public static String EXTRA_MMS = "is_mms";

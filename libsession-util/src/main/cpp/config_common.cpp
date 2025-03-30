@@ -9,7 +9,7 @@
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_network_loki_messenger_libsession_1util_ConfigKt_createConfigObject(
+Java_network_noth_messenger_libsession_1util_ConfigKt_createConfigObject(
         JNIEnv *env,
         jclass _clazz,
         jstring java_config_name,

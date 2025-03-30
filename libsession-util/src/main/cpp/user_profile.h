@@ -6,7 +6,7 @@
 #include <string>
 
 inline session::config::UserProfile* ptrToProfile(JNIEnv* env, jobject obj) {
-    jclass configClass = env->FindClass("network/loki/messenger/libsession_util/UserProfile");
+    jclass configClass = env->FindClass("network/noth/messenger/libsession_util/UserProfile");
     jfieldID pointerField = env->GetFieldID(configClass, "pointer", "J");
     return (session::config::UserProfile*) env->GetLongField(obj, pointerField);
 }

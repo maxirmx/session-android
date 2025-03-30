@@ -51,7 +51,7 @@ import network.noth.messenger.libsession_util.util.ExpiryMode;
 public class AndroidAutoReplyReceiver extends BroadcastReceiver {
 
   public static final String TAG             = AndroidAutoReplyReceiver.class.getSimpleName();
-  public static final String REPLY_ACTION    = "network.loki.securesms.notifications.ANDROID_AUTO_REPLY";
+  public static final String REPLY_ACTION    = "network.noth.securesms.notifications.ANDROID_AUTO_REPLY";
   public static final String ADDRESS_EXTRA   = "car_address";
   public static final String VOICE_REPLY_KEY = "car_voice_reply_key";
   public static final String THREAD_ID_EXTRA = "car_reply_thread_id";

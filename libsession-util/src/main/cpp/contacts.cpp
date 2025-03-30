@@ -4,7 +4,7 @@
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_Contacts_get(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_Contacts_get(JNIEnv *env, jobject thiz,
                                                           jstring account_id) {
     // If an exception is thrown, return nullptr
     return jni_utils::run_catching_cxx_exception_or<jobject>(
@@ -24,7 +24,7 @@ Java_network_loki_messenger_libsession_1util_Contacts_get(JNIEnv *env, jobject t
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_Contacts_getOrConstruct(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_Contacts_getOrConstruct(JNIEnv *env, jobject thiz,
                                                                      jstring account_id) {
     return jni_utils::run_catching_cxx_exception_or_throws<jobject>(env, [=] {
         std::lock_guard lock{util::util_mutex_};
@@ -38,7 +38,7 @@ Java_network_loki_messenger_libsession_1util_Contacts_getOrConstruct(JNIEnv *env
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_network_loki_messenger_libsession_1util_Contacts_set(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_Contacts_set(JNIEnv *env, jobject thiz,
                                                           jobject contact) {
     jni_utils::run_catching_cxx_exception_or_throws<void>(env, [=] {
         std::lock_guard lock{util::util_mutex_};
@@ -50,7 +50,7 @@ Java_network_loki_messenger_libsession_1util_Contacts_set(JNIEnv *env, jobject t
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_network_loki_messenger_libsession_1util_Contacts_erase(JNIEnv *env, jobject thiz,
+Java_network_noth_messenger_libsession_1util_Contacts_erase(JNIEnv *env, jobject thiz,
                                                             jstring account_id) {
     return jni_utils::run_catching_cxx_exception_or_throws<jboolean>(env, [=] {
         std::lock_guard lock{util::util_mutex_};
@@ -65,7 +65,7 @@ Java_network_loki_messenger_libsession_1util_Contacts_erase(JNIEnv *env, jobject
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_network_loki_messenger_libsession_1util_Contacts_all(JNIEnv *env, jobject thiz) {
+Java_network_noth_messenger_libsession_1util_Contacts_all(JNIEnv *env, jobject thiz) {
     return jni_utils::run_catching_cxx_exception_or_throws<jobject>(env, [=] {
         std::lock_guard lock{util::util_mutex_};
         auto contacts = ptrToContacts(env, thiz);

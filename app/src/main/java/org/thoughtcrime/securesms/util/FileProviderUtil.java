@@ -11,7 +11,7 @@ import java.io.File;
 
 public class FileProviderUtil {
 
-  private static final String AUTHORITY = "network.loki.securesms.fileprovider";
+  private static final String AUTHORITY = "network.noth.securesms.fileprovider";
 
   public static Uri getUriFor(@NonNull Context context, @NonNull File file) {
     return FileProvider.getUriForFile(context, AUTHORITY, file);

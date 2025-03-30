@@ -4,7 +4,7 @@
 #include "util.h"
 
 inline session::config::groups::Members* ptrToMembers(JNIEnv* env, jobject obj) {
-    jclass configClass = env->FindClass("network/loki/messenger/libsession_util/GroupMembersConfig");
+    jclass configClass = env->FindClass("network/noth/messenger/libsession_util/GroupMembersConfig");
     jfieldID pointerField = env->GetFieldID(configClass, "pointer", "J");
     return (session::config::groups::Members*) env->GetLongField(obj, pointerField);
 }
