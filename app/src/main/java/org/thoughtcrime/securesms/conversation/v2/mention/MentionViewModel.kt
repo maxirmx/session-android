@@ -27,8 +27,8 @@ import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.withContext
-import network.loki.messenger.R
-import network.loki.messenger.libsession_util.allWithStatus
+import network.noth.messenger.R
+import network.noth.messenger.libsession_util.allWithStatus
 import org.session.libsession.messaging.contacts.Contact
 import org.session.libsession.messaging.utilities.SodiumUtilities
 import org.session.libsession.utilities.ConfigFactoryProtocol

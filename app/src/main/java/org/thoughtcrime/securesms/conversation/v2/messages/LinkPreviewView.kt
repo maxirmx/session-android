@@ -8,8 +8,8 @@ import android.view.MotionEvent
 import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import com.bumptech.glide.RequestManager
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewLinkPreviewBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewLinkPreviewBinding
 import org.session.libsession.utilities.getColorFromAttr
 import org.session.libsignal.utilities.Log
 import org.thoughtcrime.securesms.components.CornerMask

@@ -39,7 +39,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import org.session.libsession.utilities.recipients.Recipient;
 import org.session.libsignal.utilities.ListenableFuture;
 import org.session.libsignal.utilities.Log;

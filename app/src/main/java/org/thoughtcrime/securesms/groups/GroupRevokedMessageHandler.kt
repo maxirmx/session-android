@@ -1,6 +1,6 @@
 package org.thoughtcrime.securesms.groups
 
-import network.loki.messenger.libsession_util.util.Sodium
+import network.noth.messenger.libsession_util.util.Sodium
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.messaging.groups.GroupManagerV2
 import org.session.libsession.utilities.ConfigFactoryProtocol

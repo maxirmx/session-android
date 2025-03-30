@@ -30,7 +30,7 @@ import org.session.libsession.utilities.ViewUtil;
 import org.thoughtcrime.securesms.database.CursorRecyclerViewAdapter;
 import org.thoughtcrime.securesms.database.loaders.RecentPhotosLoader;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class RecentPhotoViewRail extends FrameLayout implements LoaderManager.LoaderCallbacks<Cursor> {
 

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import org.thoughtcrime.securesms.components.emoji.MediaKeyboardProvider.TabIconProvider;
 import com.bumptech.glide.RequestManager;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class MediaKeyboardBottomTabAdapter extends RecyclerView.Adapter<MediaKeyboardBottomTabAdapter.MediaKeyboardBottomTabViewHolder>  {
 

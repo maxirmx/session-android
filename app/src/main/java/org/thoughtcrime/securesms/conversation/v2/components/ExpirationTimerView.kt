@@ -5,7 +5,7 @@ import android.graphics.drawable.AnimationDrawable
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.snode.SnodeAPI.nowWithOffset
 import kotlin.math.round
 

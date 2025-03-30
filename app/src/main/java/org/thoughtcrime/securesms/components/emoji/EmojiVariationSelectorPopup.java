@@ -13,7 +13,7 @@ import org.session.libsession.utilities.ThemeUtil;
 
 import java.util.List;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class EmojiVariationSelectorPopup extends PopupWindow {
 

@@ -3,7 +3,7 @@ package org.session.libsession.database
 import android.content.Context
 import android.net.Uri
 import com.goterl.lazysodium.utils.KeyPair
-import network.loki.messenger.libsession_util.util.GroupDisplayInfo
+import network.noth.messenger.libsession_util.util.GroupDisplayInfo
 import org.session.libsession.messaging.BlindedIdMapping
 import org.session.libsession.messaging.calls.CallMessageType
 import org.session.libsession.messaging.contacts.Contact
@@ -37,8 +37,8 @@ import org.session.libsignal.crypto.ecc.ECKeyPair
 import org.session.libsignal.messages.SignalServiceAttachmentPointer
 import org.session.libsignal.messages.SignalServiceGroup
 import org.session.libsignal.utilities.AccountId
-import network.loki.messenger.libsession_util.util.Contact as LibSessionContact
-import network.loki.messenger.libsession_util.util.GroupMember as LibSessionGroupMember
+import network.noth.messenger.libsession_util.util.Contact as LibSessionContact
+import network.noth.messenger.libsession_util.util.GroupMember as LibSessionGroupMember
 
 interface StorageProtocol {
 

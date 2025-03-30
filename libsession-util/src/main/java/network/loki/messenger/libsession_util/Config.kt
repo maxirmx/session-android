@@ -1,13 +1,13 @@
-package network.loki.messenger.libsession_util
+package network.noth.messenger.libsession_util
 
-import network.loki.messenger.libsession_util.util.BaseCommunityInfo
-import network.loki.messenger.libsession_util.util.ConfigPush
-import network.loki.messenger.libsession_util.util.Contact
-import network.loki.messenger.libsession_util.util.Conversation
-import network.loki.messenger.libsession_util.util.ExpiryMode
-import network.loki.messenger.libsession_util.util.GroupInfo
-import network.loki.messenger.libsession_util.util.GroupMember
-import network.loki.messenger.libsession_util.util.UserPic
+import network.noth.messenger.libsession_util.util.BaseCommunityInfo
+import network.noth.messenger.libsession_util.util.ConfigPush
+import network.noth.messenger.libsession_util.util.Contact
+import network.noth.messenger.libsession_util.util.Conversation
+import network.noth.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.libsession_util.util.GroupInfo
+import network.noth.messenger.libsession_util.util.GroupMember
+import network.noth.messenger.libsession_util.util.UserPic
 import org.session.libsignal.protos.SignalServiceProtos.SharedConfigMessage.Kind
 import org.session.libsignal.utilities.AccountId
 import org.session.libsignal.utilities.IdPrefix

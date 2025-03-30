@@ -1,6 +1,6 @@
 package org.session.libsession.messaging.messages
 
-import network.loki.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.libsession_util.util.ExpiryMode
 
 data class ExpirationConfiguration(
     val threadId: Long = -1,

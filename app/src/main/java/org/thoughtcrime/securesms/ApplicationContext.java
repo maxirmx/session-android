@@ -126,9 +126,9 @@ import dagger.hilt.EntryPoints;
 import dagger.hilt.android.HiltAndroidApp;
 import kotlin.Deprecated;
 import kotlin.Unit;
-import network.loki.messenger.BuildConfig;
-import network.loki.messenger.R;
-import network.loki.messenger.libsession_util.util.Logger;
+import network.noth.messenger.BuildConfig;
+import network.noth.messenger.R;
+import network.noth.messenger.libsession_util.util.Logger;
 
 /**
  * Will be called once when the TextSecure process is created.

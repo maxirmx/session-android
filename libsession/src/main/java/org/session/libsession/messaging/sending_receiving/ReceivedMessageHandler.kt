@@ -4,8 +4,8 @@ import android.text.TextUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import network.loki.messenger.libsession_util.util.ExpiryMode
-import network.loki.messenger.libsession_util.util.Sodium
+import network.noth.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.libsession_util.util.Sodium
 import org.session.libsession.R
 import org.session.libsession.avatars.AvatarHelper
 import org.session.libsession.database.userAuth

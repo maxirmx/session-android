@@ -3,8 +3,8 @@ package org.thoughtcrime.securesms.service
 import android.content.Context
 import dagger.Lazy
 import dagger.hilt.android.qualifiers.ApplicationContext
-import network.loki.messenger.libsession_util.util.ExpiryMode
-import network.loki.messenger.libsession_util.util.ExpiryMode.AfterSend
+import network.noth.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.libsession_util.util.ExpiryMode.AfterSend
 import org.session.libsession.messaging.messages.control.ExpirationTimerUpdate
 import org.session.libsession.messaging.messages.signal.IncomingMediaMessage
 import org.session.libsession.messaging.messages.signal.OutgoingExpirationUpdateMessage

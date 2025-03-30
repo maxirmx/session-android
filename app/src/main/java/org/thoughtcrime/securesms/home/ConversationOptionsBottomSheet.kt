@@ -9,8 +9,8 @@ import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
-import network.loki.messenger.R
-import network.loki.messenger.databinding.FragmentConversationBottomSheetBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.FragmentConversationBottomSheetBinding
 import org.session.libsession.messaging.groups.LegacyGroupDeprecationManager
 import org.session.libsession.utilities.GroupRecord
 import org.session.libsession.utilities.getGroup

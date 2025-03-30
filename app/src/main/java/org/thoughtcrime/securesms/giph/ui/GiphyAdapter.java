@@ -35,7 +35,7 @@ import com.bumptech.glide.RequestManager;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 
 class GiphyAdapter extends RecyclerView.Adapter<GiphyAdapter.GiphyViewHolder> {

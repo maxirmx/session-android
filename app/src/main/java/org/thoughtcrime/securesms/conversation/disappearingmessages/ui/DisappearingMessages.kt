@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import network.loki.messenger.R
-import network.loki.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.R
+import network.noth.messenger.libsession_util.util.ExpiryMode
 import org.thoughtcrime.securesms.ui.BottomFadingEdgeBox
 import org.thoughtcrime.securesms.ui.Callbacks
 import org.thoughtcrime.securesms.ui.NoOpCallbacks

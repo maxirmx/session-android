@@ -14,8 +14,8 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import network.loki.messenger.R
-import network.loki.messenger.databinding.DialogClearAllDataBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.DialogClearAllDataBinding
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.database.userAuth
 import org.session.libsession.messaging.open_groups.OpenGroupApi

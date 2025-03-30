@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import network.loki.messenger.databinding.ViewMentionCandidateV2Binding
+import network.noth.messenger.databinding.ViewMentionCandidateV2Binding
 import org.thoughtcrime.securesms.conversation.v2.mention.MentionViewModel
 
 class MentionCandidateAdapter(

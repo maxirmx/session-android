@@ -22,7 +22,7 @@ import android.text.TextUtils;
 
 import org.thoughtcrime.securesms.components.ComposeText;
 
-import network.loki.messenger.BuildConfig;
+import network.noth.messenger.BuildConfig;
 
 public class Util {
 

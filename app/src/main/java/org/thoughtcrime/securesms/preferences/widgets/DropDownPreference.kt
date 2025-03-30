@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.widget.TextView
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceViewHolder
-import network.loki.messenger.R
+import network.noth.messenger.R
 
 class DropDownPreference : ListPreference {
     private var dropDownLabel: TextView? = null

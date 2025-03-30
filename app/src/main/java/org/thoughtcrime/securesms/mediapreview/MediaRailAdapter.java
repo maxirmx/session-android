@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 
 import org.thoughtcrime.securesms.conversation.v2.utilities.ThumbnailView;

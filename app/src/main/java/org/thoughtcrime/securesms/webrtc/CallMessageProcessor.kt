@@ -43,7 +43,7 @@ class CallMessageProcessor(private val context: Context, private val textSecureP
             // Wake up the device (if required) before attempting to start any services - otherwise on Android 12 and above we get
             // a BackgroundServiceStartNotAllowedException such as:
             //      Unable to start CallMessage intent: startForegroundService() not allowed due to mAllowStartForeground false:
-            //      service network.loki.messenger/org.thoughtcrime.securesms.service.WebRtcCallService
+            //      service network.noth.messenger/org.thoughtcrime.securesms.service.WebRtcCallService
             (context as ApplicationContext).wakeUpDeviceAndDismissKeyguardIfRequired()
 
             // Attempt to start the call service..

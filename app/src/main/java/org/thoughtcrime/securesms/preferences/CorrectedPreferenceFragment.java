@@ -22,7 +22,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
 import org.thoughtcrime.securesms.conversation.v2.ViewUtil;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public abstract class CorrectedPreferenceFragment extends PreferenceFragmentCompat {
 

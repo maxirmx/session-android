@@ -1,4 +1,4 @@
-package network.loki.messenger.libsession_util.util
+package network.noth.messenger.libsession_util.util
 
 import kotlin.time.Duration.Companion.seconds
 

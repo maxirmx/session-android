@@ -46,7 +46,7 @@ import org.thoughtcrime.securesms.mms.VideoSlide;
 
 import java.io.IOException;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 @UnstableApi
 public class VideoPlayer extends FrameLayout {

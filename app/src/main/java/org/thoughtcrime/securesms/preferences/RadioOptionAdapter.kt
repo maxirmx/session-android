@@ -8,8 +8,8 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ItemSelectableBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ItemSelectableBinding
 import com.bumptech.glide.Glide
 import org.thoughtcrime.securesms.ui.GetString
 import java.util.Objects

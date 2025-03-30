@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import com.squareup.phrase.Phrase
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewSearchBottomBarBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewSearchBottomBarBinding
 import org.session.libsession.utilities.StringSubstitutionConstants.COUNT_KEY
 import org.session.libsession.utilities.StringSubstitutionConstants.TOTAL_COUNT_KEY
 

@@ -1,8 +1,8 @@
 package org.thoughtcrime.securesms.conversation.disappearingmessages
 
 import androidx.annotation.StringRes
-import network.loki.messenger.R
-import network.loki.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.R
+import network.noth.messenger.libsession_util.util.ExpiryMode
 import org.session.libsession.utilities.Address
 import org.thoughtcrime.securesms.ui.GetString
 import kotlin.time.Duration

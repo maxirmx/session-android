@@ -21,7 +21,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.Arrays;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class MediaKeyboard extends FrameLayout implements InputView,
                                                           MediaKeyboardProvider.Presenter,

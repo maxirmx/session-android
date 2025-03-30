@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import org.thoughtcrime.securesms.mms.DecryptableStreamUriLoader;
 import com.bumptech.glide.Glide;
 

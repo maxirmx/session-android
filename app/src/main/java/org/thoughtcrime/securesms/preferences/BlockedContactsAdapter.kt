@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import network.loki.messenger.R
-import network.loki.messenger.databinding.BlockedContactLayoutBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.BlockedContactLayoutBinding
 import org.session.libsession.utilities.recipients.Recipient
 import com.bumptech.glide.Glide
 import org.thoughtcrime.securesms.util.adapter.SelectableItem

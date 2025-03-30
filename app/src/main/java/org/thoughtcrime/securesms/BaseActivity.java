@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 
 import androidx.fragment.app.FragmentActivity;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public abstract class BaseActivity extends FragmentActivity {
   @Override

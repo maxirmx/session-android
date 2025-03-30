@@ -15,7 +15,7 @@ import android.view.MotionEvent
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.annotation.DrawableRes
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.utilities.getColorFromAttr
 import org.thoughtcrime.securesms.util.GlowViewUtilities
 import org.thoughtcrime.securesms.util.InputBarButtonImageViewContainer

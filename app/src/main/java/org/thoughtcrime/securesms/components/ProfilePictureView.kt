@@ -11,8 +11,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import dagger.hilt.android.AndroidEntryPoint
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewProfilePictureBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewProfilePictureBinding
 import org.session.libsession.avatars.ContactColors
 import org.session.libsession.avatars.PlaceholderAvatarPhoto
 import org.session.libsession.avatars.ProfileContactPhoto
@@ -155,7 +155,7 @@ class ProfilePictureView @JvmOverloads constructor(
                 this.recipient = Recipient.from(context, Address.fromSerialized(publicKey), false)
                 this.recipient!!
             }
-            
+
             if (profilePicturesCache[imageView] == recipient) return
             // recipient is mutable so without cloning it the line above always returns true as the changes to the underlying recipient happens on both shared instances
             profilePicturesCache[imageView] = recipient.clone()

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 public class RemovableEditableMediaView extends FrameLayout {
 
@@ -51,7 +51,7 @@ public class RemovableEditableMediaView extends FrameLayout {
 
   public void display(@Nullable View view, boolean editable) {
     edit.setVisibility(editable ? View.VISIBLE : View.GONE);
-    
+
     if (view == current) return;
     if (current != null) current.setVisibility(View.GONE);
 

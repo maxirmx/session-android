@@ -1,6 +1,6 @@
 package org.thoughtcrime.securesms.util
 
-import network.loki.messenger.libsession_util.ReadableConversationVolatileConfig
+import network.noth.messenger.libsession_util.ReadableConversationVolatileConfig
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.utilities.GroupUtil
 import org.session.libsignal.utilities.IdPrefix

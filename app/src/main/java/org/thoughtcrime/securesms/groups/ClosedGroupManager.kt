@@ -1,7 +1,7 @@
 package org.thoughtcrime.securesms.groups
 
 import android.content.Context
-import network.loki.messenger.libsession_util.ConfigBase
+import network.noth.messenger.libsession_util.ConfigBase
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.messaging.sending_receiving.notifications.PushRegistryV1
 import org.session.libsession.messaging.sending_receiving.pollers.LegacyClosedGroupPollerV2

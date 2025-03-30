@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
-import network.loki.messenger.R
+import network.noth.messenger.R
 import org.session.libsession.snode.SnodeAPI
 import org.session.libsession.snode.utilities.await
 import org.session.libsignal.utilities.PublicKeyValidation

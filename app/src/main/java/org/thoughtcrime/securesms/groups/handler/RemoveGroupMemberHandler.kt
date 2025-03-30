@@ -10,11 +10,11 @@ import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.launch
-import network.loki.messenger.R
-import network.loki.messenger.libsession_util.ReadableGroupKeysConfig
-import network.loki.messenger.libsession_util.allWithStatus
-import network.loki.messenger.libsession_util.util.GroupMember
-import network.loki.messenger.libsession_util.util.Sodium
+import network.noth.messenger.R
+import network.noth.messenger.libsession_util.ReadableGroupKeysConfig
+import network.noth.messenger.libsession_util.allWithStatus
+import network.noth.messenger.libsession_util.util.GroupMember
+import network.noth.messenger.libsession_util.util.Sodium
 import org.session.libsession.database.MessageDataProvider
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.messaging.messages.Destination

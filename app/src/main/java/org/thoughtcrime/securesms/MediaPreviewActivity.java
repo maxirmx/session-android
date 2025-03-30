@@ -64,7 +64,7 @@ import java.util.WeakHashMap;
 
 import dagger.hilt.android.AndroidEntryPoint;
 import kotlin.Unit;
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 
 import org.session.libsession.messaging.groups.LegacyGroupDeprecationManager;
 import org.session.libsession.messaging.messages.control.DataExtractionNotification;

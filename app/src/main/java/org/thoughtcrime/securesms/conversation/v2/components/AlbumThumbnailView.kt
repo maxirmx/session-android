@@ -12,8 +12,8 @@ import android.widget.TextView
 import androidx.core.view.children
 import androidx.core.view.isVisible
 import com.squareup.phrase.Phrase
-import network.loki.messenger.R
-import network.loki.messenger.databinding.AlbumThumbnailViewBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.AlbumThumbnailViewBinding
 import org.session.libsession.messaging.sending_receiving.attachments.AttachmentTransferProgress
 import org.session.libsession.messaging.sending_receiving.attachments.DatabaseAttachment
 import org.session.libsession.utilities.StringSubstitutionConstants.COUNT_KEY

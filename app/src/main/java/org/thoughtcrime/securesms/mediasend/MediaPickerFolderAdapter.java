@@ -13,7 +13,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 
 
-import network.loki.messenger.R;
+import network.noth.messenger.R;
 import com.bumptech.glide.RequestManager;
 
 import java.util.ArrayList;

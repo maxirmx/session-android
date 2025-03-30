@@ -7,8 +7,8 @@ import android.graphics.PorterDuff
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
-import network.loki.messenger.R
-import network.loki.messenger.databinding.ViewTypingIndicatorBinding
+import network.noth.messenger.R
+import network.noth.messenger.databinding.ViewTypingIndicatorBinding
 
 class TypingIndicatorView : LinearLayout {
     companion object {
@@ -20,7 +20,7 @@ class TypingIndicatorView : LinearLayout {
 
     private val binding: ViewTypingIndicatorBinding by lazy {
         val binding = ViewTypingIndicatorBinding.bind(this)
-        
+
         if (tint != -1) {
             binding.typingDot1.getBackground().setColorFilter(tint, PorterDuff.Mode.MULTIPLY)
             binding.typingDot2.getBackground().setColorFilter(tint, PorterDuff.Mode.MULTIPLY)

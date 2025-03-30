@@ -1,15 +1,15 @@
-package network.loki.messenger.libsession_util
+package network.noth.messenger.libsession_util
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import network.loki.messenger.libsession_util.util.BaseCommunityInfo
-import network.loki.messenger.libsession_util.util.Contact
-import network.loki.messenger.libsession_util.util.Conversation
-import network.loki.messenger.libsession_util.util.ExpiryMode
-import network.loki.messenger.libsession_util.util.GroupMember
-import network.loki.messenger.libsession_util.util.KeyPair
-import network.loki.messenger.libsession_util.util.Sodium
-import network.loki.messenger.libsession_util.util.UserPic
+import network.noth.messenger.libsession_util.util.BaseCommunityInfo
+import network.noth.messenger.libsession_util.util.Contact
+import network.noth.messenger.libsession_util.util.Conversation
+import network.noth.messenger.libsession_util.util.ExpiryMode
+import network.noth.messenger.libsession_util.util.GroupMember
+import network.noth.messenger.libsession_util.util.KeyPair
+import network.noth.messenger.libsession_util.util.Sodium
+import network.noth.messenger.libsession_util.util.UserPic
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.CoreMatchers.hasItem
 import org.hamcrest.CoreMatchers.not
@@ -56,7 +56,7 @@ class InstrumentedTests {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("network.loki.messenger.libsession_util.test", appContext.packageName)
+        assertEquals("network.noth.messenger.libsession_util.test", appContext.packageName)
     }
 
     @Test
